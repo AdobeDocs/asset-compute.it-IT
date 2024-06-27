@@ -2,9 +2,9 @@
 title: Comprendere il funzionamento di un’applicazione personalizzata
 description: Funzionamento interno di [!DNL Asset Compute Service] applicazione personalizzata per comprendere come funziona.
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: 5257e091730f3672c46dfbe45c3e697a6555e6b1
+source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '691'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ Utilizza l’illustrazione seguente per comprendere il flusso di lavoro end-to-e
 
 ![Flusso di lavoro dell&#39;applicazione personalizzato](assets/customworker.svg)
 
-*Figura: Passaggi necessari per elaborare una risorsa utilizzando [!DNL Asset Compute Service].*
+*Figura: Passaggi necessari durante l’elaborazione di una risorsa tramite Adobe [!DNL Asset Compute Service].*
 
 ## Registrazione {#registration}
 
-Il client deve chiamare [`/register`](api.md#register) una volta prima della prima richiesta a [`/process`](api.md#process-request) per impostare e recuperare l&#39;URL del giornale di registrazione per la ricezione [!DNL Adobe I/O] Ad Adobe Asset compute, gli eventi.
+Il client deve chiamare [`/register`](api.md#register) una volta prima della prima richiesta a [`/process`](api.md#process-request) in modo da poter impostare e recuperare l&#39;URL del giornale di registrazione per l&#39;Adobe di ricezione [!DNL I/O Events] Ad Adobe Asset compute, gli eventi.
 
 ```sh
 curl -X POST \
@@ -70,7 +70,7 @@ Di seguito è riportato un esempio di richiesta di elaborazione personalizzata d
 
 Il [!DNL Asset Compute Service] invia le richieste di rendering dell’applicazione personalizzata all’applicazione personalizzata. Utilizza un POST HTTP per l’URL dell’applicazione fornito, che è l’URL dell’azione web protetta di App Builder. Tutte le richieste utilizzano il protocollo HTTPS per massimizzare la sicurezza dei dati.
 
-Il [SDK ASSET COMPUTE](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) utilizzato da un’applicazione personalizzata gestisce la richiesta HTTP POST. Gestisce anche il download dell’origine, il caricamento delle rappresentazioni e l’invio [!DNL Adobe I/O] e la gestione degli errori.
+Il [SDK ASSET COMPUTE](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) utilizzato da un’applicazione personalizzata gestisce la richiesta HTTP POST. Gestisce anche il download dell’origine, il caricamento delle rappresentazioni e l’invio di Adobi [!DNL I/O Events] e la gestione degli errori.
 
 <!-- TBD: Add the application diagram. -->
 
@@ -96,7 +96,7 @@ exports.main = worker(async (source, rendition) => {
 
 ### Scarica i file sorgente {#download-source}
 
-Un’applicazione personalizzata tratta solo i file locali. Il download del file di origine viene gestito da [SDK ASSET COMPUTE](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk).
+Un’applicazione personalizzata tratta solo i file locali. Il [SDK ASSET COMPUTE](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) gestisce il download del file di origine.
 
 ### Creazione rappresentazione {#rendition-creation}
 
@@ -112,15 +112,15 @@ Per ulteriori informazioni sui parametri di callback della rappresentazione, con
 
 Dopo aver creato e memorizzato ogni copia trasformata in un file con il percorso fornito da `rendition.path`, il [SDK ASSET COMPUTE](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) carica ogni rendering in un’archiviazione cloud (AWS o Azure). Un’applicazione personalizzata ottiene più rappresentazioni contemporaneamente se, e solo se, la richiesta in ingresso ha più rappresentazioni che puntano allo stesso URL dell’applicazione. Il caricamento nell’archiviazione cloud viene eseguito dopo ogni rendering e prima di eseguire il callback per il rendering successivo.
 
-Il `batchWorker()` ha un comportamento diverso, in quanto elabora effettivamente tutte le rappresentazioni e solo dopo che tutte sono state elaborate carica quelle.
+Il `batchWorker()` ha un comportamento diverso. Elabora tutte le rappresentazioni e solo dopo che tutte sono state elaborate, le carica.
 
 ## [!DNL Adobe I/O] Eventi {#aio-events}
 
-L’SDK invia [!DNL Adobe I/O] Eventi per ogni rappresentazione. Questi eventi sono di entrambi i tipi `rendition_created` o `rendition_failed` a seconda del risultato. Consulta [Asset compute di eventi asincroni](api.md#asynchronous-events) per i dettagli degli eventi.
+L’SDK invia un Adobe [!DNL I/O Events] per ogni rappresentazione. Questi eventi sono di entrambi i tipi `rendition_created` o `rendition_failed` a seconda del risultato. Per ulteriori informazioni, consulta [Asset compute di eventi asincroni](api.md#asynchronous-events).
 
 ## Ricezione [!DNL Adobe I/O] Eventi {#receive-aio-events}
 
-Il client esegue il polling di [[!DNL Adobe I/O] Giornale di registrazione eventi](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#/Journaling) in base alla sua logica di consumo. L&#39;URL iniziale del giornale di registrazione è quello fornito in `/register` Risposta API. Gli eventi possono essere identificati utilizzando `requestId` presente negli eventi e uguale a quello restituito in `/process`. Ogni rendering ha un evento separato che viene inviato non appena il rendering è stato caricato (o non è riuscito). Una volta ricevuto un evento corrispondente, il client può visualizzare o gestire in altro modo le rappresentazioni risultanti.
+Il client esegue il polling dell’Adobe [!DNL I/O Events] giornale di registrazione in base alla logica di consumo. L&#39;URL iniziale del giornale di registrazione è quello fornito in `/register` Risposta API. Gli eventi possono essere identificati utilizzando `requestId` presente negli eventi e uguale a quello restituito in `/process`. Ogni rendering ha un evento separato che viene inviato non appena il rendering è stato caricato (o non è riuscito). Quando riceve un evento corrispondente, il client può visualizzare o gestire in altro modo le rappresentazioni risultanti.
 
 Libreria JavaScript [`asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) semplifica il polling del diario utilizzando `waitActivation()` per ottenere tutti gli eventi.
 
@@ -140,7 +140,7 @@ await Promise.all(events.map(event => {
 }));
 ```
 
-Per informazioni dettagliate su come ottenere gli eventi del diario, vedere [[!DNL Adobe I/O] API Eventi](https://www.adobe.io/apis/experienceplatform/events/ioeventsapi.html#!adobedocs/adobeio-events/master/events-api-reference.yaml).
+Per informazioni dettagliate su come ottenere eventi diario, vedere l&#39;Adobe [[!DNL I/O Events] API](https://developer.adobe.com/events/docs/guides/api/journaling_api/).
 
 <!-- TBD:
 * Illustration of the controls/data flow.

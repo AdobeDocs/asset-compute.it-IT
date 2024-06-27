@@ -1,65 +1,65 @@
 ---
-source-git-commit: c0fd9623ad09443a99695352743a165744961758
+source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
 workflow-type: tm+mt
-source-wordcount: '648'
-ht-degree: 45%
+source-wordcount: '588'
+ht-degree: 33%
 
 ---
-# Linee guida per contribuire alla documentazione
+# Linee guida per Contribute per la documentazione
 
 ## Filosofia della documentazione
 
-Sappiamo che gli utenti lavorano in ambienti altamente competitivi, cercando di creare esperienze digitali che li distinguano dai loro concorrenti. È quindi fondamentale che, quando Adobe fornisce nuovi strumenti avanzati, questi siano accompagnati da una documentazione accurata e chiara che consenta al cliente di sfruttare immediatamente il proprio investimento e massimizzare il ROI.
+Gli utenti lavorano in ambienti altamente competitivi per creare esperienze digitali che li distinguano dalla concorrenza. Pertanto, è fondamentale che, quando Adobe offre nuovi strumenti avanzati, questi siano integrati da una documentazione accurata e chiara. Documentazione che consente ai clienti di utilizzare immediatamente il proprio investimento e massimizzare il ROI.
 
-L&#39;obiettivo è mettere la documentazione nelle mani dei suoi utenti il prima possibile. Viene quindi data priorità a una documentazione accurata e fruibile, sottoposta ad aggiornamento e miglioramento continuo.
+L’obiettivo è quello di rendere la documentazione disponibile agli utenti il prima possibile. Viene, quindi, data priorità a una documentazione accurata e fruibile, sottoposta ad aggiornamento e miglioramento continuo.
 
 ## Contributi alla documentazione
 
-Per migliorare continuamente la documentazione, l’intera community di utenti è lieta di contribuire alla documentazione. I miglioramenti apportati alla documentazione, che derivino da richieste o segnalazioni di problemi, possono essere correzioni, chiarimenti, ampliamenti ed esempi aggiuntivi.
+Al fine di migliorare continuamente la documentazione, apprezziamo il contributo dell’intera community di utenti di. I miglioramenti apportati alla documentazione, che derivino da richieste o segnalazioni di problemi, possono essere correzioni, chiarimenti, ampliamenti ed esempi aggiuntivi.
 
 ## Standard della documentazione
 
-Pur accogliendo con favore i contributi alla documentazione di , qualsiasi contributo, sotto forma di richiesta o segnalazione di un problema, deve essere conforme ai nostri standard in merito ai contributi e alla documentazione. I contributi che non soddisfano tali standard possono essere rifiutati.
+Qualsiasi contributo alla documentazione, sotto forma di richiesta o segnalazione di un problema, deve essere conforme agli standard in materia di contributi e documentazione di Adobe.
 
-### Documentiamo casi d’uso standard e non soluzioni alternative
+### I casi di utilizzo standard sono documentati all’Adobe
 
-La documentazione tratta i casi d’uso standard. I casi di utilizzo che esulano dall’ambito di installazione e utilizzo standard e supportati del prodotto non fanno parte della documentazione. Per questo motivo, i difetti, gli effetti causati da difetti e le soluzioni alternative per difetti non sono generalmente documentati.
+La documentazione riguarda i casi di utilizzo standard. I casi di utilizzo che esulano dall’ambito di installazione e utilizzo standard e supportati del prodotto non fanno parte della documentazione.
 
-Eccezioni a questa regola sono le note sulla versione in cui i problemi noti possono essere elencati con possibili soluzioni alternative approvate in Adobe.
+Fanno eccezione le note sulla versione, in cui possono essere elencati i problemi noti con possibili soluzioni alternative approvate da Adobe.
 
-### I contributi alla documentazione non devono rispondere alle richieste dei clienti
+### I contributi alla documentazione non devono rispondere alle domande dei clienti
 
-Qualsiasi idea sia necessario migliorare la documentazione è gradita come contributo. Tuttavia, commenti, problemi e richieste sono intesi solo come *contributi*. Non sono destinati a rispondere alle tue domande su come utilizzare il prodotto, implementare progetti o risolvere problemi tecnici.
+È gradita come contributo qualsiasi idea che punti al miglioramento della documentazione. Tuttavia, commenti, problemi e richieste sono intesi per *contributi* solo. Non devono rispondere a domande su come utilizzare il prodotto, implementare progetti o risolvere problemi tecnici.
 
-Qualsiasi domanda sull&#39;utilizzo o sugli errori tecnici che potresti riscontrare deve essere segnalata attraverso il normale processo di supporto tramite il [[!DNL Experience Manager] portale di assistenza clienti](https://experienceleague.adobe.com/?support-solution=Experience+Manager#home) o discussa nella [[!DNL Experience Manager] community](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community).
+Eventuali domande sull’utilizzo o su errori tecnici possono essere segnalate attraverso il normale processo di assistenza tramite il [[!DNL Experience Manager] Portale di assistenza clienti](https://experienceleague.adobe.com/?support-solution=Experience+Manager&amp;lang=it#home) o discussi in [[!DNL Experience Manager] community](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community?lang=it).
 
-I contributi alla documentazione non sostituiscono Adobe Customer Care*** e tutti i contributi che richiedono risposte a domande correlate al supporto verranno rifiutati.
+***I contributi alla documentazione non sostituiscono, ad Adobe, l’Assistenza clienti*** e tutti i contributi che richiedono risposte a domande correlate al supporto sono respinti.
 
 ### I contributi devono fare riferimento in modo chiaro alle pagine della documentazione interessate.
 
-Se apri una segnalazione per suggerire miglioramenti alla documentazione, devi includere i collegamenti alle pagine interessate. Se apri una segnalazione utilizzando il collegamento **Modifica pagina** di una pagina della documentazione, il problema verrà creato automaticamente con un collegamento alla pagina in questione.
+Se apri una segnalazione per suggerire miglioramenti alla documentazione, devi includere i collegamenti alle pagine interessate. Se apri una segnalazione di un problema utilizzando il collegamento **Modifica questa pagina** di una pagina della documentazione, il problema verrà creato automaticamente con un collegamento alla pagina in questione.
 
-Ciò non si applica alle richieste pull, che per loro natura fanno riferimento alle pagine interessate.
+Questo processo non si applica alle richieste pull, che per loro natura fanno riferimento alle pagine interessate.
 
 ## Linee guida per la documentazione
 
-Chiediamo che qualsiasi contributo alla nostra documentazione segua determinate linee guida di stile.
+Adobe chiede che qualsiasi contributo alla documentazione segua determinate linee guida di stile.
 
-L’adesione a queste linee guida semplifica la revisione del contributo proposto e ne velocizza quindi l’integrazione nella documentazione.
+L’aderenza a queste linee guida semplifica la revisione del contributo e velocizza quindi l’integrazione nella documentazione di Adobe.
 
 ### Lingua e stile
 
 #### Lingua
 
-* La documentazione viene scritta e conservata in inglese americano.
+* La documentazione viene creata e mantenuta in inglese americano.
 * Usa frasi quanto più semplici possibile.
 * Usa un linguaggio chiaro e conciso.
 
-Ricorda che i lettori della documentazione sono in tutto il mondo e non ci si può aspettare che siano madrelingua o parlanti fluenti dell&#39;inglese. Evita i colloquialismi e usa un linguaggio chiaro e semplice.
+Ricorda che i lettori della documentazione sono di tutto il mondo e non ci si può aspettare che siano di madrelingua inglese o che parlino inglese correntemente. Evita le espressioni colloquiali e usa un linguaggio chiaro e semplice.
 
-#### Segui il manuale di stile di Microsoft
+#### Segui il Manuale di stile di Microsoft
 
-[Il manuale Microsoft di ](https://docs.microsoft.com/it-it/style-guide/welcome/) Styleis è una guida allo stile della documentazione disponibile liberamente incentrata sulla documentazione del software.
+[Manuale di stile di Microsoft](https://learn.microsoft.com/it-it/style-guide/welcome/) è una guida di stile per la documentazione disponibile gratuitamente, specifica per la documentazione di software.
 
 ### Formattazione
 
@@ -71,10 +71,10 @@ Ricorda che i lettori della documentazione sono in tutto il mondo e non ci si pu
 
 ### Schermate
 
-Non fare un uso eccessivo di schermate e usale solo quando una descrizione testuale è insufficiente.
+Le schermate vanno utilizzate in modo non eccessivo e solo quando una descrizione testuale è insufficiente.
 
-Non utilizzare marcatori o altre annotazioni quali cornici rosse, frecce o testo nelle schermate. In questo modo le schermate sono più facili da riutilizzare e replicare nelle versioni localizzate della documentazione.
+Non utilizzare marcatori o altre annotazioni quali cornici rosse, frecce o testo sulle schermate. In questo modo le schermate possono essere riutilizzate e replicate più facilmente nelle versioni localizzate della documentazione.
 
-### Riferimenti specifici per le versioni
+### Riferimenti a specifiche versioni
 
-È meglio evitare, quando possibile, riferimenti diretti a una versione specifica nel contenuto della documentazione. In tal modo la documentazione sarà più flessibile e potrà essere estesa anche a versioni future.
+È meglio evitare, quando possibile, riferimenti diretti a una versione specifica nel contenuto della documentazione. Questa raccomandazione rende la documentazione più flessibile con la possibilità di estenderla anche a versioni future.
