@@ -2,9 +2,9 @@
 title: Test ed debug [!DNL Asset Compute Service] applicazione personalizzata
 description: Test ed debug [!DNL Asset Compute Service] applicazione personalizzata.
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
-source-git-commit: 5257e091730f3672c46dfbe45c3e697a6555e6b1
+source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '775'
 ht-degree: 0%
 
 ---
@@ -25,17 +25,17 @@ To run tests for a custom application, run `aio asset-compute test-worker` comma
 Document interactively running `adobe-asset-compute` commands `test-worker` and `run-worker`.
 -->
 
-In questo modo viene eseguito un framework di unit test personalizzato per azioni dell&#39;applicazione di Asset compute nel progetto, come descritto di seguito. È collegato tramite una configurazione in `package.json` file. È inoltre possibile disporre di unit test JavaScript, ad esempio Jest. `aio app test` esegue entrambi.
+Questo comando esegue un framework di unit test personalizzato per azioni dell&#39;applicazione di Asset compute nel progetto come descritto di seguito. È collegato tramite una configurazione in `package.json` file. È inoltre possibile disporre di unit test JavaScript, ad esempio Jest. Il `aio app test` esegue entrambi.
 
-Il [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency) il plug-in è incorporato come dipendenza dallo sviluppo nell’app dell’applicazione personalizzata, pertanto non deve essere installato sui sistemi di build/test.
+Il [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency) il plug-in è incorporato come dipendenza di sviluppo nell’app dell’applicazione personalizzata, pertanto non deve essere installato sui sistemi di build/test.
 
 ### Framework di test delle unità applicative {#unit-test-framework}
 
-Il framework di test di unità applicativa di Asset compute consente di testare le applicazioni senza scrivere codice. Si basa sul principio di origine per il rendering del file delle applicazioni. È necessario configurare una determinata struttura di file e cartelle per definire i casi di test con file di origine di test, parametri facoltativi, rappresentazioni previste e script di convalida personalizzati. Per impostazione predefinita, le rappresentazioni vengono confrontate per l&#39;uguaglianza dei byte. Inoltre, i servizi HTTP esterni possono essere facilmente presi in giro utilizzando semplici file JSON.
+L&#39;Asset compute di framework di unit test dell&#39;applicazione consente di testare le applicazioni senza scrivere codice. Si basa sul principio di origine per il rendering del file delle applicazioni. È necessario configurare una determinata struttura di file e cartelle per definire i casi di test con file di origine di test, parametri facoltativi, rappresentazioni previste e script di convalida personalizzati. Per impostazione predefinita, le rappresentazioni vengono confrontate per l&#39;uguaglianza dei byte. Inoltre, i servizi HTTP esterni possono essere facilmente presi in giro utilizzando semplici file JSON.
 
 ### Aggiungi test {#add-tests}
 
-Sono previsti test all’interno del `test` cartella a livello principale della [!DNL Adobe I/O] progetto. I casi di test per ogni applicazione devono essere nel percorso `test/asset-compute/<worker-name>`, con una cartella per ogni test case:
+Sono previsti test all’interno del `test` a livello di directory principale del progetto. I casi di test per ogni applicazione devono essere nel percorso `test/asset-compute/<worker-name>`, con una cartella per ogni test case:
 
 ```yaml
 action/
@@ -66,11 +66,11 @@ Dai un&#39;occhiata a [esempi di applicazioni personalizzate](https://github.com
 
 ### Output di prova {#test-output}
 
-L’output del test dettagliato, compresi i registri dell’applicazione personalizzata, è disponibile nella sezione `build` nella directory principale dell&#39;app Adobe Developer App Builder, come illustrato nella `aio app test` output.
+Il `build` La directory principale dell’app Adobe Developer App Builder contiene i risultati dettagliati dei test e i registri dell’applicazione personalizzata. Questi dettagli vengono visualizzati anche nell&#39;output del `aio app test` comando.
 
 ### Mascherare i servizi esterni {#mock-external-services}
 
-È possibile simulare chiamate di servizio esterne nelle azioni definendo `mock-<HOST_NAME>.json` file nei tuoi casi di test, dove HOST_NAME è l&#39;host che desideri simulare. Un esempio di caso d’uso è un’applicazione che effettua una chiamata separata a S3. La nuova struttura di test sarà simile alla seguente:
+Puoi simulare chiamate di servizio esterne all’interno delle azioni creando `mock-<HOST_NAME>.json` file per gli scenari di test, con HOST_NAME come host specifico da imitare. Un esempio di caso d’uso è un’applicazione che effettua una chiamata separata a S3. La nuova struttura di test sarà simile alla seguente:
 
 ```json
 test/
@@ -105,7 +105,7 @@ L’esempio `worker-animal-pictures` contiene un [file fittizio](https://github.
 
 #### Condivisione di file tra test case {#share-files-across-test-cases}
 
-Si consiglia di utilizzare i symlink relativi se si condividono `file.*`, `params.json` o `validate` script in più test. Sono supportate con Git. Assicurati di assegnare ai file condivisi un nome univoco, in quanto potrebbero essere presenti file diversi. Nell’esempio seguente i test si combinano e corrispondono a pochi file condivisi e ai loro:
+L’Adobe consiglia di utilizzare i symlink relativi se condividi `file.*`, `params.json` o `validate` script in più test. Sono supportati con Git. Assicurati di assegnare ai file condivisi un nome univoco, in quanto potrebbero essere presenti file diversi. Nell’esempio seguente i test si combinano e corrispondono a pochi file condivisi e ai loro:
 
 ```json
 tests/
@@ -158,13 +158,13 @@ File di parametri con motivo errore:
 }
 ```
 
-Vedi elenco completo e descrizione di [Motivi di errore Asset compute](https://github.com/adobe/asset-compute-commons#error-reasons).
+Vedi un elenco completo e una descrizione di [Motivi di errore Asset compute](https://github.com/adobe/asset-compute-commons#error-reasons).
 
 ## Eseguire il debug di un&#39;applicazione personalizzata {#debug-custom-worker}
 
 Nei passaggi seguenti viene illustrato come eseguire il debug dell&#39;applicazione personalizzata utilizzando Visual Studio Code. Consente di visualizzare registri live, punti di interruzione di hit e codice step-through, nonché il ricaricamento in tempo reale delle modifiche al codice locale a ogni attivazione.
 
-Molti di questi passaggi sono in genere automatizzati da `aio` con, consulta la sezione Debug dell’applicazione in [Documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/getting_started/first_app). Per il momento, i passaggi seguenti includono una soluzione alternativa.
+Il `aio` molti di questi passaggi sono automatizzati con la soluzione preconfigurata. Vai alla sezione Debug dell’applicazione in [Documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/getting_started/first_app). Per il momento, i passaggi seguenti includono una soluzione alternativa.
 
 1. Installa la versione più recente [wskdebug](https://github.com/apache/openwhisk-wskdebug) da GitHub e le opzioni [ngrok](https://www.npmjs.com/package/ngrok).
 
@@ -173,11 +173,11 @@ Molti di questi passaggi sono in genere automatizzati da `aio` con, consulta la 
    npm install -g ngrok --unsafe-perm=true
    ```
 
-1. Aggiungi al file JSON delle impostazioni utente. Continua a utilizzare il vecchio debugger VS Code, il nuovo ha [alcuni problemi](https://github.com/apache/openwhisk-wskdebug/issues/74) con wskdebug: `"debug.javascript.usePreview": false`.
+1. Aggiungi delle impostazioni utente al file JSON. Continua a utilizzare il debugger del codice di Visual Studio precedente. Il nuovo ha [alcuni problemi](https://github.com/apache/openwhisk-wskdebug/issues/74) con wskdebug: `"debug.javascript.usePreview": false`.
 1. Chiudi tutte le istanze di app aperte tramite `aio app run`.
 1. Distribuisci il codice più recente tramite `aio app deploy`.
 1. Esegui solo lo strumento di sviluppo Asset compute utilizzando `aio asset-compute devtool`. Tienilo aperto.
-1. Nell’editor di codice VS, aggiungi la seguente configurazione di debug al tuo `launch.json`:
+1. Nell&#39;editor di codice di Visual Studio aggiungere la seguente configurazione di debug `launch.json`:
 
    ```json
    {
@@ -202,9 +202,9 @@ Molti di questi passaggi sono in genere automatizzati da `aio` con, consulta la 
 
 1. Seleziona `wskdebug worker` dalla configurazione esegui/debug e premi l’icona play. Attendi che inizi finché non viene visualizzato **[!UICONTROL Pronto per le attivazioni]** nel **[!UICONTROL Console di debug]** finestra.
 
-1. Clic **[!UICONTROL eseguire]** in Devtool. Puoi vedere le azioni in esecuzione nell’editor di codice VS e i registri iniziano a essere visualizzati.
+1. Clic **[!UICONTROL eseguire]** in Devtool. È possibile visualizzare le azioni in esecuzione nell&#39;editor di codice di Visual Studio e i registri iniziano a essere visualizzati.
 
-1. Imposta un punto di interruzione nel codice, esegui di nuovo e dovrebbe premere.
+1. Imposta un punto di interruzione nel codice. Quindi esegui di nuovo e dovrebbe colpire.
 
 Eventuali modifiche al codice vengono caricate in tempo reale e diventano effettive non appena si verifica l’attivazione successiva.
 

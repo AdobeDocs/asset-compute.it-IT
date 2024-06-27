@@ -12,10 +12,10 @@ feature-set: Experience Manager Assets
 git-repo: https://github.com/AdobeDocs/asset-compute.it-IT
 index: y
 recommendations: noDisplay
-source-git-commit: cb87ab6081d53610acf27419fa5103b3ae1ead03
+source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
-source-wordcount: '128'
-ht-degree: 91%
+source-wordcount: '132'
+ht-degree: 84%
 
 ---
 
@@ -30,7 +30,7 @@ Il file metadata.md include metadati a livello di archivio che vengono trasmessi
 | solution-hub-url | Apre la pagina hub di supporto |
 | solution-icon | Visualizza l’icona della soluzione accanto al titolo della soluzione. Non ancora implementato |
 | getting-started-url | Collegamento alla pagina della guida introduttiva |
-| tutorials-url | Collegamento per i tutorial video: esercitazioni nella guida helpx o su KT |
+| tutorials-url | Collegamento ai tutorial video: esercitazioni Helpx o per il trasferimento delle conoscenze |
 | mini-toc-levels | Determina quanti livelli di intestazione vengono visualizzati nella barra a destra. Il valore predefinito è 2. |
 | git-repo | Specifica la posizione dell’archivio principale per uso interno |
 
