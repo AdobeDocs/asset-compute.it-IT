@@ -6,7 +6,7 @@ type: Documentation
 role: Developer
 feature: Asset Compute Microservices
 user-guide-title: Guida al servizio Asset Compute
-user-guide-description: 'Questa documentazione tratta i seguenti argomenti: [!DNL Asset Compute Service] attività quali sviluppo, gestione, distribuzione e risoluzione dei problemi relativi al codice personalizzato.'
+user-guide-description: Questa documentazione tratta  [!DNL Asset Compute Service]  attività come sviluppare, gestire, distribuire e risolvere problemi relativi al codice personalizzato.
 breadcrumb-title: Guida al servizio Asset Compute
 source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt

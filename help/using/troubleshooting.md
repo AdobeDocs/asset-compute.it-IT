@@ -1,6 +1,6 @@
 ---
 title: Risoluzione dei problemi [!DNL Asset Compute Service]
-description: Risolvere i problemi ed eseguire il debug di applicazioni personalizzate tramite [!DNL Asset Compute Service].
+description: Risolvere i problemi ed eseguire il debug delle applicazioni personalizzate utilizzando  [!DNL Asset Compute Service].
 exl-id: 017fff91-e5e9-4a30-babf-5faa1ebefc2f
 source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
@@ -13,22 +13,22 @@ ht-degree: 0%
 
 Di seguito sono riportati alcuni suggerimenti generici per la risoluzione dei problemi relativi al servizio Asset Compute:
 
-* Assicurarsi che l&#39;applicazione JavaScript non si arresti in modo anomalo all&#39;avvio. Tali arresti anomali sono in genere correlati a una libreria mancante o a una dipendenza.
-* Assicurarsi che tutte le dipendenze da installare siano indicate nel file `package.json` file.
+* Verificare che l&#39;applicazione JavaScript non si arresti all&#39;avvio. Tali arresti anomali sono in genere correlati a una libreria mancante o a una dipendenza.
+* Verificare che nel file `package.json` dell&#39;applicazione venga fatto riferimento a tutte le dipendenze da installare.
 * Assicurati che eventuali errori derivanti dalla pulizia in caso di errore non generino errori che nascondono il problema originale.
 
-* Quando si avvia lo strumento per sviluppatori per la prima volta con un nuovo [!DNL Asset Compute Service] integrazione, la prima richiesta di elaborazione potrebbe non riuscire se il journal degli eventi di Asset compute non è completamente configurato. Attendi che il giornale di registrazione venga configurato prima di inviare un’altra richiesta.
-* Assicurati che tutte le API richieste siano Asset compute, Adobe [!DNL I/O Events], Gestione degli eventi e Runtime-sono inclusi nell’Adobe [!DNL `I/O Project`] e Workspace da evitare `/register` o `/process` errori di richiesta.
+* Quando si avvia lo strumento per sviluppatori per la prima volta con una nuova integrazione [!DNL Asset Compute Service], la prima richiesta di elaborazione potrebbe non riuscire se il journal degli eventi Asset Compute non è completamente configurato. Attendi che il giornale di registrazione venga configurato prima di inviare un’altra richiesta.
+* Assicurarsi che tutte le API richieste (Asset compute, Adobe [!DNL I/O Events], Gestione eventi e Runtime) siano incluse nell&#39;Adobe [!DNL `I/O Project`] e in Workspace per evitare errori di richiesta `/register` o `/process`.
 
-## Accedi ai problemi tramite Adobe [!DNL aio-cli] {#login-via-aio-cli}
+## Accedi ai problemi per Adobe [!DNL aio-cli] {#login-via-aio-cli}
 
-In caso di problemi di accesso a [!DNL Adobe Developer Console] [tramite l’Adobe [!DNL aio-cli]](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli), quindi aggiungi manualmente le credenziali necessarie per sviluppare, testare e distribuire l’applicazione personalizzata:
+In caso di problemi durante l&#39;accesso a [!DNL Adobe Developer Console] [tramite l&#39;Adobe [!DNL aio-cli]](https://developer.adobe.com/app-builder/docs/getting_started/first_app/#3-signing-in-from-cli), aggiungere manualmente le credenziali necessarie per lo sviluppo, il test e la distribuzione dell&#39;applicazione personalizzata:
 
-1. Vai al progetto Adobe Developer App Builder e all’area di lavoro nella sezione [Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis) e premere **[!UICONTROL Scarica]** dall&#39;angolo in alto a destra. Apri questo file e salva JSON in un luogo sicuro sul computer.
+1. Passa al progetto e all&#39;area di lavoro Adobe Developer App Builder in [Adobe Developer Console](https://developer.adobe.com/console/user/servicesandapis) e premi **[!UICONTROL Scarica]** dall&#39;angolo in alto a destra. Apri questo file e salva JSON in un luogo sicuro sul computer.
 
 1. Passa al file ENV nell’applicazione Adobe Developer App Builder.
 
-1. Aggiungi l’Adobe [!DNL I/O Runtime] credenziali. Leggi l&#39;Adobe [!DNL I/O Runtime] credenziali dal JSON scaricato. Le credenziali sono sotto `project.workspace.services.runtime`. Aggiungi il [!DNL Adobe I/O] Credenziali runtime in `AIO_runtime_XXX` Variabili:
+1. Aggiungere le credenziali dell&#39;Adobe [!DNL I/O Runtime]. Ottieni le credenziali dell&#39;Adobe [!DNL I/O Runtime] dal JSON scaricato. Credenziali in `project.workspace.services.runtime`. Aggiungere le credenziali di runtime [!DNL Adobe I/O] nelle variabili `AIO_runtime_XXX`:
 
    ```json
    AIO_runtime_auth=
@@ -41,7 +41,7 @@ In caso di problemi di accesso a [!DNL Adobe Developer Console] [tramite l’Ado
        ASSET_COMPUTE_INTEGRATION_FILE_PATH=
    ```
 
-1. Imposta il resto del [credenziali richieste](develop-custom-application.md) necessario per lo strumento per sviluppatori.
+1. Configura il resto delle [credenziali richieste](develop-custom-application.md) necessarie per lo strumento per sviluppatori.
 
 <!-- TBD for later:
 Add any best practices for developers in this section:

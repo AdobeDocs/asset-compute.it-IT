@@ -1,6 +1,6 @@
 ---
-title: Test ed debug [!DNL Asset Compute Service] applicazione personalizzata
-description: Test ed debug [!DNL Asset Compute Service] applicazione personalizzata.
+title: Test ed esecuzione del debug  [!DNL Asset Compute Service] dell'applicazione personalizzata
+description: Test ed esecuzione del debug  [!DNL Asset Compute Service] dell'applicazione personalizzata.
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
 source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
 workflow-type: tm+mt
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Eseguire unit test per un&#39;applicazione personalizzata {#test-custom-worker}
 
-Installa [Docker Desktop](https://www.docker.com/get-started) sul tuo computer. Per testare un processo di lavoro personalizzato, eseguire il comando seguente nella radice dell&#39;applicazione:
+Installa [Docker Desktop](https://www.docker.com/get-started) nel computer. Per testare un processo di lavoro personalizzato, eseguire il comando seguente nella radice dell&#39;applicazione:
 
 ```bash
 $ aio app test
@@ -25,9 +25,9 @@ To run tests for a custom application, run `aio asset-compute test-worker` comma
 Document interactively running `adobe-asset-compute` commands `test-worker` and `run-worker`.
 -->
 
-Questo comando esegue un framework di unit test personalizzato per azioni dell&#39;applicazione di Asset compute nel progetto come descritto di seguito. È collegato tramite una configurazione in `package.json` file. È inoltre possibile disporre di unit test JavaScript, ad esempio Jest. Il `aio app test` esegue entrambi.
+Questo comando esegue un framework di unit test personalizzato per azioni dell&#39;applicazione di Asset compute nel progetto come descritto di seguito. È collegato tramite una configurazione nel file `package.json`. È inoltre possibile disporre di unit test JavaScript, ad esempio Jest. `aio app test` esegue entrambi.
 
-Il [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency) il plug-in è incorporato come dipendenza di sviluppo nell’app dell’applicazione personalizzata, pertanto non deve essere installato sui sistemi di build/test.
+Il plug-in [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency) è incorporato come una dipendenza di sviluppo nell&#39;app dell&#39;applicazione personalizzata, pertanto non è necessario installarlo nei sistemi di build/test.
 
 ### Framework di test delle unità applicative {#unit-test-framework}
 
@@ -35,7 +35,7 @@ L&#39;Asset compute di framework di unit test dell&#39;applicazione consente di 
 
 ### Aggiungi test {#add-tests}
 
-Sono previsti test all’interno del `test` a livello di directory principale del progetto. I casi di test per ogni applicazione devono essere nel percorso `test/asset-compute/<worker-name>`, con una cartella per ogni test case:
+I test sono previsti all&#39;interno della cartella `test` al livello principale del progetto. I test case per ogni applicazione devono trovarsi nel percorso `test/asset-compute/<worker-name>`, con una cartella per ogni test case:
 
 ```yaml
 action/
@@ -62,15 +62,15 @@ test/
             mock-console.adobe.io.json
 ```
 
-Dai un&#39;occhiata a [esempi di applicazioni personalizzate](https://github.com/adobe/asset-compute-example-workers/) per alcuni esempi. Di seguito è riportato un riferimento dettagliato.
+Guarda [esempio di applicazioni personalizzate](https://github.com/adobe/asset-compute-example-workers/) per alcuni esempi. Di seguito è riportato un riferimento dettagliato.
 
 ### Output di prova {#test-output}
 
-Il `build` La directory principale dell’app Adobe Developer App Builder contiene i risultati dettagliati dei test e i registri dell’applicazione personalizzata. Questi dettagli vengono visualizzati anche nell&#39;output del `aio app test` comando.
+La directory `build` nella directory principale dell&#39;app Adobe Developer App Builder contiene i risultati dettagliati dei test e i registri dell&#39;applicazione personalizzata. Questi dettagli vengono visualizzati anche nell&#39;output del comando `aio app test`.
 
 ### Mascherare i servizi esterni {#mock-external-services}
 
-Puoi simulare chiamate di servizio esterne all’interno delle azioni creando `mock-<HOST_NAME>.json` file per gli scenari di test, con HOST_NAME come host specifico da imitare. Un esempio di caso d’uso è un’applicazione che effettua una chiamata separata a S3. La nuova struttura di test sarà simile alla seguente:
+È possibile simulare chiamate di servizio esterne all&#39;interno delle azioni creando `mock-<HOST_NAME>.json` file per gli scenari di test. HOST_NAME è l&#39;host specifico che si intende imitare. Un esempio di caso d’uso è un’applicazione che effettua una chiamata separata a S3. La nuova struttura di test sarà simile alla seguente:
 
 ```json
 test/
@@ -84,7 +84,7 @@ test/
         mock-<HOST_NAME2>.json
 ```
 
-Il file fittizio è una risposta HTTP in formato JSON. Per ulteriori informazioni, consulta [questa documentazione](https://www.mock-server.com/mock_server/creating_expectations.html). Se esistono più nomi host da simulare, definire più `mock-<mocked-host>.json` file. Di seguito è riportato un esempio di file fittizio per `google.com` denominato `mock-google.com.json`:
+Il file fittizio è una risposta HTTP in formato JSON. Per ulteriori informazioni, consulta [questa documentazione](https://www.mock-server.com/mock_server/creating_expectations.html). Se ci sono più nomi host da simulare, definire più file `mock-<mocked-host>.json`. Di seguito è riportato un esempio di file fittizio per `google.com` denominato `mock-google.com.json`:
 
 ```json
 [{
@@ -101,11 +101,11 @@ Il file fittizio è una risposta HTTP in formato JSON. Per ulteriori informazion
 }]
 ```
 
-L’esempio `worker-animal-pictures` contiene un [file fittizio](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/test/asset-compute/worker-animal-pictures/simple-test/mock-upload.wikimedia.org.json) per il servizio Wikimedia con cui interagisce.
+L&#39;esempio `worker-animal-pictures` contiene un [file fittizio](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-animal-pictures/test/asset-compute/worker-animal-pictures/simple-test/mock-upload.wikimedia.org.json) per il servizio Wikimedia con cui interagisce.
 
 #### Condivisione di file tra test case {#share-files-across-test-cases}
 
-L’Adobe consiglia di utilizzare i symlink relativi se condividi `file.*`, `params.json` o `validate` script in più test. Sono supportati con Git. Assicurati di assegnare ai file condivisi un nome univoco, in quanto potrebbero essere presenti file diversi. Nell’esempio seguente i test si combinano e corrispondono a pochi file condivisi e ai loro:
+L&#39;Adobe consiglia di utilizzare i symlink relativi se si condividono `file.*`, `params.json` o `validate` script in più test. Sono supportati con Git. Assicurati di assegnare ai file condivisi un nome univoco, in quanto potrebbero essere presenti file diversi. Nell’esempio seguente i test si combinano e corrispondono a pochi file condivisi e ai loro:
 
 ```json
 tests/
@@ -135,11 +135,11 @@ tests/
 
 ### Test degli errori previsti {#test-unexpected-errors}
 
-I casi di test di errore non devono contenere un `rendition.*` e deve definire il `errorReason` all&#39;interno del `params.json` file.
+I casi di test degli errori non devono contenere un file `rendition.*` previsto e devono definire il file `errorReason` previsto all&#39;interno del file `params.json`.
 
 >[!NOTE]
 >
->Se un test case non contiene un valore previsto `rendition.*` e non definisce il file previsto `errorReason` all&#39;interno del `params.json` file, si presume che sia un caso di errore con qualsiasi `errorReason`.
+>Se un test case non contiene un file `rendition.*` previsto e non definisce il `errorReason` previsto all&#39;interno del file `params.json`, si presume che si tratti di un errore con qualsiasi `errorReason`.
 
 Struttura del test case di errore:
 
@@ -158,15 +158,15 @@ File di parametri con motivo errore:
 }
 ```
 
-Vedi un elenco completo e una descrizione di [Motivi di errore Asset compute](https://github.com/adobe/asset-compute-commons#error-reasons).
+Visualizza un elenco completo e una descrizione di [motivi di errore Asset compute](https://github.com/adobe/asset-compute-commons#error-reasons).
 
 ## Eseguire il debug di un&#39;applicazione personalizzata {#debug-custom-worker}
 
 Nei passaggi seguenti viene illustrato come eseguire il debug dell&#39;applicazione personalizzata utilizzando Visual Studio Code. Consente di visualizzare registri live, punti di interruzione di hit e codice step-through, nonché il ricaricamento in tempo reale delle modifiche al codice locale a ogni attivazione.
 
-Il `aio` molti di questi passaggi sono automatizzati con la soluzione preconfigurata. Vai alla sezione Debug dell’applicazione in [Documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/getting_started/first_app). Per il momento, i passaggi seguenti includono una soluzione alternativa.
+`aio` preconfigurato automatizza molti di questi passaggi. Vai alla sezione Debug dell&#39;applicazione nella [documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/getting_started/first_app). Per il momento, i passaggi seguenti includono una soluzione alternativa.
 
-1. Installa la versione più recente [wskdebug](https://github.com/apache/openwhisk-wskdebug) da GitHub e le opzioni [ngrok](https://www.npmjs.com/package/ngrok).
+1. Installa la versione più recente di [wskdebug](https://github.com/apache/openwhisk-wskdebug) da GitHub e la [ngrok](https://www.npmjs.com/package/ngrok) facoltativa.
 
    ```shell
    npm install -g @openwhisk/wskdebug
@@ -174,10 +174,10 @@ Il `aio` molti di questi passaggi sono automatizzati con la soluzione preconfigu
    ```
 
 1. Aggiungi delle impostazioni utente al file JSON. Continua a utilizzare il debugger del codice di Visual Studio precedente. Il nuovo ha [alcuni problemi](https://github.com/apache/openwhisk-wskdebug/issues/74) con wskdebug: `"debug.javascript.usePreview": false`.
-1. Chiudi tutte le istanze di app aperte tramite `aio app run`.
-1. Distribuisci il codice più recente tramite `aio app deploy`.
-1. Esegui solo lo strumento di sviluppo Asset compute utilizzando `aio asset-compute devtool`. Tienilo aperto.
-1. Nell&#39;editor di codice di Visual Studio aggiungere la seguente configurazione di debug `launch.json`:
+1. Chiudere tutte le istanze di app aperte tramite `aio app run`.
+1. Distribuire il codice più recente utilizzando `aio app deploy`.
+1. Eseguire solo lo strumento di sviluppo Asset Compute utilizzando `aio asset-compute devtool`. Tienilo aperto.
+1. Nell&#39;editor di codice di Visual Studio aggiungere la seguente configurazione di debug a `launch.json`:
 
    ```json
    {
@@ -198,11 +198,11 @@ Il `aio` molti di questi passaggi sono automatizzati con la soluzione preconfigu
    }
    ```
 
-   Recupera il `ACTION NAME` dall&#39;output di `aio app deploy`.
+   Recupera `ACTION NAME` dall&#39;output di `aio app deploy`.
 
-1. Seleziona `wskdebug worker` dalla configurazione esegui/debug e premi l’icona play. Attendi che inizi finché non viene visualizzato **[!UICONTROL Pronto per le attivazioni]** nel **[!UICONTROL Console di debug]** finestra.
+1. Selezionare `wskdebug worker` dalla configurazione di esecuzione/debug e premere l&#39;icona di riproduzione. Attendere che venga avviato finché non viene visualizzato **[!UICONTROL Pronto per le attivazioni]** nella finestra **[!UICONTROL Console di debug]**.
 
-1. Clic **[!UICONTROL eseguire]** in Devtool. È possibile visualizzare le azioni in esecuzione nell&#39;editor di codice di Visual Studio e i registri iniziano a essere visualizzati.
+1. Fare clic su **[!UICONTROL esegui]** in Devtool. È possibile visualizzare le azioni in esecuzione nell&#39;editor di codice di Visual Studio e i registri iniziano a essere visualizzati.
 
 1. Imposta un punto di interruzione nel codice. Quindi esegui di nuovo e dovrebbe colpire.
 
