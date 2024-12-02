@@ -1,6 +1,6 @@
 ---
-title: "[!DNL Asset Compute Service] API HTTP"
-description: "[!DNL Asset Compute Service] API HTTP per creare applicazioni personalizzate."
+title: API HTTP [!DNL Asset Compute Service]
+description: API HTTP [!DNL Asset Compute Service] per creare applicazioni personalizzate.
 exl-id: 4b63fdf9-9c0d-4af7-839d-a95e07509750
 source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
 workflow-type: tm+mt
@@ -344,7 +344,7 @@ Codici di stato:
 
 La maggior parte dei client è probabilmente incline a ritentare la stessa richiesta con [backoff esponenziale](https://en.wikipedia.org/wiki/Exponential_backoff) per qualsiasi errore *eccetto* problemi di configurazione come 401 o 403 o richieste non valide come 400. A parte la regolare limitazione delle tariffe tramite risposte 429, un’interruzione temporanea del servizio o una limitazione potrebbero causare errori 5xx. Sarebbe quindi consigliabile riprovare dopo un certo periodo di tempo.
 
-Tutte le risposte JSON (se presenti) includono `requestId`, che è lo stesso valore dell&#39;intestazione `X-Request-Id`. L’Adobe consiglia di leggere dall’intestazione perché è sempre presente. `requestId` viene restituito anche in tutti gli eventi relativi all&#39;elaborazione delle richieste come `requestId`. I client non devono fare alcuna supposizione sul formato di questa stringa. È un identificatore di stringa opaco.
+Tutte le risposte JSON (se presenti) includono `requestId`, che è lo stesso valore dell&#39;intestazione `X-Request-Id`. Adobe consiglia di leggere dall’intestazione perché è sempre presente. `requestId` viene restituito anche in tutti gli eventi relativi all&#39;elaborazione delle richieste come `requestId`. I client non devono fare alcuna supposizione sul formato di questa stringa. È un identificatore di stringa opaco.
 
 ## Consenso alla post-elaborazione {#opt-in-to-post-processing}
 

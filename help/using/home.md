@@ -1,5 +1,5 @@
 ---
-title: "[!DNL Adobe Asset Compute Service] Guida utente"
+title: Guida utente di [!DNL Adobe Asset Compute Service]
 description: Questa documentazione tratta  [!DNL Asset Compute Service]  attività come l'introduzione, lo sviluppo, la gestione, la distribuzione e la risoluzione dei problemi relativi al codice personalizzato.
 exl-id: 5acf87d1-a391-4802-bfce-e367fc8564df
 source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Informazioni su [!DNL Asset Compute Service]
 
-[!DNL Asset Compute Service] è un servizio scalabile ed estensibile di Adobe Experience Cloud per l&#39;elaborazione di risorse digitali. Può trasformare immagini, video, documenti e altri formati di file in diverse rappresentazioni, tra cui miniature, testo e metadati estratti, archivi e altro ancora. Gli sviluppatori possono collegare applicazioni personalizzate (o processi di lavoro personalizzati) per risolvere casi d&#39;uso personalizzati, creati con [Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/overview) ed eseguiti nell&#39;Adobe senza server [[!DNL I/O Runtime]](https://developer.adobe.com/runtime/).
+[!DNL Asset Compute Service] è un servizio scalabile ed estensibile di Adobe Experience Cloud per l&#39;elaborazione di risorse digitali. Può trasformare immagini, video, documenti e altri formati di file in diverse rappresentazioni, tra cui miniature, testo e metadati estratti, archivi e altro ancora. Gli sviluppatori possono collegare applicazioni personalizzate (o processi di lavoro personalizzati) per risolvere casi d&#39;uso personalizzati, creati con [Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/overview) ed eseguiti in un Adobe senza server [[!DNL I/O Runtime]](https://developer.adobe.com/runtime/).
 
 Questa documentazione tratta [!DNL Asset Compute Service] argomenti quali come sviluppare, gestire, distribuire e risolvere problemi relativi al codice personalizzato. Per sapere cos&#39;è un [!DNL Asset Compute Service], passa a questa [introduzione](introduction.md). Vedi anche [le funzionalità del servizio](introduction.md#possible-use-cases-benefits).
 
