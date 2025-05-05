@@ -20,7 +20,7 @@ ht-degree: 6%
 
 + [Guida utente del servizio Asset Compute](home.md)
 + [Panoramica](introduction.md)
-+ [Formati di file supportati](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)
++ [Formati di file supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/file-format-support)
 + [Architettura](architecture.md)
 + [Riferimenti API](api.md)
 + Estendi servizio Asset Compute {#extend}

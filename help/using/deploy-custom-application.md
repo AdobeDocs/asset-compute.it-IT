@@ -25,4 +25,4 @@ Assicurati che il progetto e l&#39;area di lavoro di App Builder corrispondano a
 
 >[!MORELIKETHIS]
 >
->* [Comprendere e gestire gli ambienti in [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/manage-environments).
+>* [Comprendere e gestire gli ambienti in [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/manage-environments).

@@ -373,7 +373,7 @@ Di seguito sono riportate le opzioni disponibili per l&#39;array `renditions` in
 
 | Nome | Tipo | Descrizione | Esempio |
 |-------------------|----------|-------------|---------|
-| `fmt` | `string` | Il formato di destinazione delle rappresentazioni può anche essere `text` per l&#39;estrazione del testo e `xmp` per l&#39;estrazione dei metadati XMP come XML. Visualizza [formati supportati](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
+| `fmt` | `string` | Il formato di destinazione delle rappresentazioni può anche essere `text` per l&#39;estrazione del testo e `xmp` per l&#39;estrazione dei metadati XMP come XML. Visualizza [formati supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
 | `worker` | `string` | URL di [applicazione personalizzata](develop-custom-application.md). Deve essere un URL `https://`. Se questo campo è presente, la copia trasformata viene creata da un&#39;applicazione personalizzata. Qualsiasi altro campo di rendering impostato viene quindi utilizzato nell’applicazione personalizzata. | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
 | `target` | `string` | L’URL in cui deve essere caricata la rappresentazione generata utilizzando HTTP PUT. | `http://w.com/img.jpg` |
 | `target` | `object` | Informazioni sul caricamento di URL prefirmati in più parti per la rappresentazione generata. Queste informazioni sono per [AEM / Caricamento binario diretto Oak](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html) con questo [comportamento di caricamento multipart](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html).<br>Campi:<ul><li>`urls`: array di stringhe, uno per ogni URL parte prefirmato</li><li>`minPartSize`: dimensione minima da utilizzare per una parte = url</li><li>`maxPartSize`: dimensione massima da utilizzare per una parte = url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
@@ -381,7 +381,7 @@ Di seguito sono riportate le opzioni disponibili per l&#39;array `renditions` in
 
 ### Campi specifici della rappresentazione {#rendition-specific-fields}
 
-Per un elenco dei formati di file attualmente supportati, vedere [formati di file supportati](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support).
+Per un elenco dei formati di file attualmente supportati, vedere [formati di file supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/file-format-support).
 
 | Nome | Tipo | Descrizione | Esempio |
 |-------------------|----------|-------------|---------|
