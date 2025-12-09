@@ -2,7 +2,7 @@
 title: Informazioni sull'estensione di  [!DNL Asset Compute Service]
 description: Quando e come estendere la funzionalità  [!DNL Asset Compute Service]  per eseguire l'elaborazione personalizzata delle risorse.
 exl-id: 3b903364-34cc-44d5-9a03-24a0102cf85d
-source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
+source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
 workflow-type: tm+mt
 source-wordcount: '229'
 ht-degree: 1%
@@ -17,18 +17,18 @@ Molti requisiti di rendering, come la conversione in formati e il ridimensioname
 >
 >[!DNL Asset Compute Service] è disponibile solo per l&#39;utilizzo con [!DNL Experience Manager] come [!DNL Cloud Service].
 
-Le applicazioni personalizzate sono [app Adobe Developer App Builder](https://github.com/AdobeDocs/app-builder) headless. L&#39;estensione di [!DNL Asset Compute Service] con applicazioni personalizzate è resa semplice tramite l&#39;[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk) e gli strumenti per sviluppatori di Adobe Developer App Builder. Questi strumenti consentono agli sviluppatori di concentrarsi sulla logica di business. La creazione di applicazioni personalizzate è semplice come la creazione di una semplice azione di Adobe senza server [!DNL I/O Runtime]. È una singola funzione JavaScript di Node.js. L&#39;esempio [dell&#39;applicazione personalizzata di base](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js) lo illustra.
+Le applicazioni personalizzate sono [app Adobe Developer App Builder](https://github.com/AdobeDocs/app-builder) headless. L&#39;estensione di [!DNL Asset Compute Service] con applicazioni personalizzate è resa semplice tramite gli strumenti per sviluppatori di [Asset Compute SDK](https://github.com/adobe/asset-compute-sdk) e Adobe Developer App Builder. Questi strumenti consentono agli sviluppatori di concentrarsi sulla logica di business. La creazione di applicazioni personalizzate è semplice come la creazione di una semplice azione Adobe [!DNL I/O Runtime] senza server. È una singola funzione JavaScript di Node.js. L&#39;esempio [dell&#39;applicazione personalizzata di base](https://github.com/adobe/asset-compute-example-workers/blob/master/projects/worker-basic/worker-basic.js) lo illustra.
 
 ## Prerequisiti e requisiti di provisioning {#prerequisites-and-provisioning}
 
 Assicurati di soddisfare i seguenti prerequisiti:
 
 * Gli strumenti di Adobe Developer App Builder sono installati nel computer.
-* Organizzazione [!DNL Experience Cloud]. Per ulteriori informazioni, vai a [Avvia il Percorso App Builder](https://developer.adobe.com/app-builder/docs/getting_started/#acquire-access-and-credentials).
+* Organizzazione [!DNL Experience Cloud]. Per ulteriori informazioni, vai a [Avvia il Percorso App Builder](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#acquire-access-and-credentials).
 * L&#39;organizzazione Experience deve avere [!DNL Experience Manager] come [!DNL Cloud Service] abilitato.
-* L&#39;organizzazione [!DNL Adobe Experience Cloud] fa parte del programma [!DNL Adobe Developer App Builder] Developer Sneak Peek. Vai a [come richiedere l&#39;accesso](https://developer.adobe.com/app-builder/docs/overview/getting_access).
+* L&#39;organizzazione [!DNL Adobe Experience Cloud] fa parte del programma [!DNL Adobe Developer App Builder] Developer Sneak Peek. Vai a [come richiedere l&#39;accesso](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/set-up#access-and-credentials).
 * Assicurati che lo sviluppatore disponga del ruolo di sviluppatore o delle autorizzazioni di amministratore nell’organizzazione.
-* Verificare che l&#39;Adobe [[!DNL aio-cli]](https://github.com/adobe/aio-cli) sia installato localmente.
+* Verificare che Adobe [[!DNL aio-cli]](https://github.com/adobe/aio-cli) sia installato localmente.
 
 <!-- TBD for later:
 

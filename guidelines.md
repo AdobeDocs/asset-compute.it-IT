@@ -1,11 +1,11 @@
 ---
-source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
+source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
 workflow-type: tm+mt
-source-wordcount: '588'
-ht-degree: 33%
+source-wordcount: '587'
+ht-degree: 30%
 
 ---
-# Linee guida per Contribute per la documentazione
+# Linee guida per contribuire alla documentazione di
 
 ## Filosofia della documentazione
 
@@ -19,23 +19,23 @@ Al fine di migliorare continuamente la documentazione, apprezziamo il contributo
 
 ## Standard della documentazione
 
-Qualsiasi contributo alla documentazione, sotto forma di richiesta o segnalazione di un problema, deve essere conforme agli standard in materia di contributi e documentazione di Adobe.
+Qualsiasi contributo alla documentazione, sotto forma di richiesta o segnalazione di un problema, deve essere conforme agli standard di contributo e documentazione di Adobe.
 
-### I casi di utilizzo standard sono documentati all’Adobe
+### I casi di utilizzo standard sono documentati in Adobe
 
 La documentazione riguarda i casi di utilizzo standard. I casi di utilizzo che esulano dall’ambito di installazione e utilizzo standard e supportati del prodotto non fanno parte della documentazione.
 
-Fanno eccezione le note sulla versione, in cui possono essere elencati i problemi noti con possibili soluzioni alternative approvate da Adobe.
+Fanno eccezione le note sulla versione, in cui possono essere elencati i problemi noti con possibili soluzioni che Adobe approva.
 
 ### I contributi alla documentazione non devono rispondere alle domande dei clienti
 
-È gradita come contributo qualsiasi idea che punti al miglioramento della documentazione. Tuttavia, commenti, problemi e richieste sono intesi per *contributi* solo. Non devono rispondere a domande su come utilizzare il prodotto, implementare progetti o risolvere problemi tecnici.
+È gradita come contributo qualsiasi idea che punti al miglioramento della documentazione. Tuttavia, commenti, problemi e richieste sono destinati solo a *contributi*. Non devono rispondere a domande su come utilizzare il prodotto, implementare progetti o risolvere problemi tecnici.
 
-Eventuali domande sull’utilizzo o su errori tecnici possono essere segnalate attraverso il normale processo di assistenza tramite il [[!DNL Experience Manager] Portale di assistenza clienti](https://experienceleague.adobe.com/it?support-solution=Experience+Manager&lang=it#home) o discussi in [[!DNL Experience Manager] community](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community?lang=it).
+Eventuali domande sull&#39;utilizzo o su errori tecnici possono essere segnalate attraverso il normale processo di assistenza tramite il [[!DNL Experience Manager] portale di assistenza clienti](https://experienceleague.adobe.com/?support-solution=Experience+Manager&lang=it#home) o nella [[!DNL Experience Manager] community](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community?lang=it).
 
-***I contributi alla documentazione non sostituiscono, ad Adobe, l’Assistenza clienti*** e tutti i contributi che richiedono risposte a domande correlate al supporto sono respinti.
+***I contributi alla documentazione non sostituiscono l&#39;Assistenza clienti di Adobe***. Tutti i contributi che richiedono risposte a domande correlate al supporto verranno rifiutati.
 
-### I contributi devono fare riferimento in modo chiaro alle pagine della documentazione interessate.
+### I contributi devono fare riferimento in modo chiaro alle pagine della documentazione interessate
 
 Se apri una segnalazione per suggerire miglioramenti alla documentazione, devi includere i collegamenti alle pagine interessate. Se apri una segnalazione di un problema utilizzando il collegamento **Modifica questa pagina** di una pagina della documentazione, il problema verrà creato automaticamente con un collegamento alla pagina in questione.
 
@@ -59,7 +59,7 @@ Ricorda che i lettori della documentazione sono di tutto il mondo e non ci si pu
 
 #### Segui il Manuale di stile di Microsoft
 
-[Manuale di stile di Microsoft](https://learn.microsoft.com/it-it/style-guide/welcome/) è una guida di stile per la documentazione disponibile gratuitamente, specifica per la documentazione di software.
+[Il Manuale di stile di Microsoft](https://learn.microsoft.com/it-it/style-guide/welcome/) è una guida di stile per la documentazione disponibile gratuitamente, specifica per la documentazione di software.
 
 ### Formattazione
 

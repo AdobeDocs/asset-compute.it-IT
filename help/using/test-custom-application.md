@@ -2,7 +2,7 @@
 title: Test ed esecuzione del debug  [!DNL Asset Compute Service] dell'applicazione personalizzata
 description: Test ed esecuzione del debug  [!DNL Asset Compute Service] dell'applicazione personalizzata.
 exl-id: c2534904-0a07-465e-acea-3cb578d3bc08
-source-git-commit: c6f747ebd6d1b17834f1af0837609a148804f8a9
+source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
 workflow-type: tm+mt
 source-wordcount: '775'
 ht-degree: 0%
@@ -25,13 +25,13 @@ To run tests for a custom application, run `aio asset-compute test-worker` comma
 Document interactively running `adobe-asset-compute` commands `test-worker` and `run-worker`.
 -->
 
-Questo comando esegue un framework di unit test personalizzato per azioni dell&#39;applicazione di Asset compute nel progetto come descritto di seguito. È collegato tramite una configurazione nel file `package.json`. È inoltre possibile disporre di unit test JavaScript, ad esempio Jest. `aio app test` esegue entrambi.
+Questo comando esegue un framework di unit test personalizzato per le azioni dell’applicazione Asset Compute nel progetto come descritto di seguito. È collegato tramite una configurazione nel file `package.json`. È inoltre possibile disporre di unit test JavaScript, ad esempio Jest. `aio app test` esegue entrambi.
 
 Il plug-in [aio-cli-plugin-asset-compute](https://github.com/adobe/aio-cli-plugin-asset-compute#install-as-local-devdependency) è incorporato come una dipendenza di sviluppo nell&#39;app dell&#39;applicazione personalizzata, pertanto non è necessario installarlo nei sistemi di build/test.
 
 ### Framework di test delle unità applicative {#unit-test-framework}
 
-L&#39;Asset compute di framework di unit test dell&#39;applicazione consente di testare le applicazioni senza scrivere codice. Si basa sul principio di origine per il rendering del file delle applicazioni. È necessario configurare una determinata struttura di file e cartelle per definire i casi di test con file di origine di test, parametri facoltativi, rappresentazioni previste e script di convalida personalizzati. Per impostazione predefinita, le rappresentazioni vengono confrontate per l&#39;uguaglianza dei byte. Inoltre, i servizi HTTP esterni possono essere facilmente presi in giro utilizzando semplici file JSON.
+Il framework di unit test di Asset Compute consente di testare le applicazioni senza scrivere codice. Si basa sul principio di origine per il rendering del file delle applicazioni. È necessario configurare una determinata struttura di file e cartelle per definire i casi di test con file di origine di test, parametri facoltativi, rappresentazioni previste e script di convalida personalizzati. Per impostazione predefinita, le rappresentazioni vengono confrontate per l&#39;uguaglianza dei byte. Inoltre, i servizi HTTP esterni possono essere facilmente presi in giro utilizzando semplici file JSON.
 
 ### Aggiungi test {#add-tests}
 
@@ -105,7 +105,7 @@ L&#39;esempio `worker-animal-pictures` contiene un [file fittizio](https://githu
 
 #### Condivisione di file tra test case {#share-files-across-test-cases}
 
-L&#39;Adobe consiglia di utilizzare i symlink relativi se si condividono `file.*`, `params.json` o `validate` script in più test. Sono supportati con Git. Assicurati di assegnare ai file condivisi un nome univoco, in quanto potrebbero essere presenti file diversi. Nell’esempio seguente i test si combinano e corrispondono a pochi file condivisi e ai loro:
+Adobe consiglia di utilizzare i symlink relativi se si condividono `file.*`, `params.json` o `validate` script in più test. Sono supportati con Git. Assicurati di assegnare ai file condivisi un nome univoco, in quanto potrebbero essere presenti file diversi. Nell’esempio seguente i test si combinano e corrispondono a pochi file condivisi e ai loro:
 
 ```json
 tests/
@@ -158,13 +158,13 @@ File di parametri con motivo errore:
 }
 ```
 
-Visualizza un elenco completo e una descrizione di [motivi di errore Asset compute](https://github.com/adobe/asset-compute-commons#error-reasons).
+Visualizza un elenco completo e una descrizione dei [motivi di errore di Asset Compute](https://github.com/adobe/asset-compute-commons#error-reasons).
 
 ## Eseguire il debug di un&#39;applicazione personalizzata {#debug-custom-worker}
 
 Nei passaggi seguenti viene illustrato come eseguire il debug dell&#39;applicazione personalizzata utilizzando Visual Studio Code. Consente di visualizzare registri live, punti di interruzione di hit e codice step-through, nonché il ricaricamento in tempo reale delle modifiche al codice locale a ogni attivazione.
 
-`aio` preconfigurato automatizza molti di questi passaggi. Vai alla sezione Debug dell&#39;applicazione nella [documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/getting_started/first_app). Per il momento, i passaggi seguenti includono una soluzione alternativa.
+`aio` preconfigurato automatizza molti di questi passaggi. Vai alla sezione Debug dell&#39;applicazione nella [documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/get_started/app_builder_get_started/first-app#). Per il momento, i passaggi seguenti includono una soluzione alternativa.
 
 1. Installa la versione più recente di [wskdebug](https://github.com/apache/openwhisk-wskdebug) da GitHub e la [ngrok](https://www.npmjs.com/package/ngrok) facoltativa.
 
@@ -176,7 +176,7 @@ Nei passaggi seguenti viene illustrato come eseguire il debug dell&#39;applicazi
 1. Aggiungi delle impostazioni utente al file JSON. Continua a utilizzare il debugger del codice di Visual Studio precedente. Il nuovo ha [alcuni problemi](https://github.com/apache/openwhisk-wskdebug/issues/74) con wskdebug: `"debug.javascript.usePreview": false`.
 1. Chiudere tutte le istanze di app aperte tramite `aio app run`.
 1. Distribuire il codice più recente utilizzando `aio app deploy`.
-1. Eseguire solo lo strumento di sviluppo Asset Compute utilizzando `aio asset-compute devtool`. Tienilo aperto.
+1. Eseguire solo Asset Compute Devtool utilizzando `aio asset-compute devtool`. Tienilo aperto.
 1. Nell&#39;editor di codice di Visual Studio aggiungere la seguente configurazione di debug a `launch.json`:
 
    ```json

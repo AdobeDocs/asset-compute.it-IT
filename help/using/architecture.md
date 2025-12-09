@@ -2,7 +2,7 @@
 title: Architettura di  [!DNL Asset Compute Service]
 description: Come  [!DNL Asset Compute Service] API, applicazioni e SDK collaborano per fornire un servizio di elaborazione delle risorse nativo per il cloud.
 exl-id: 658ee4b7-5eb1-4109-b263-1b7d705e49d6
-source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
+source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
 workflow-type: tm+mt
 source-wordcount: '478'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Asset Compute Service] può essere esteso creando applicazioni personalizzate basate su [!DNL Adobe Developer App Builder]. Queste applicazioni personalizzate sono [!DNL Project Adobe Developer App Builder] app headless ed eseguono attività quali l&#39;aggiunta di strumenti di conversione personalizzati o la chiamata di API esterne per eseguire operazioni sulle immagini.
 
-[!DNL Project Adobe Developer App Builder] è un framework per generare e distribuire applicazioni web personalizzate sull&#39;Adobe [!DNL `I/O Runtime`]. Per creare applicazioni personalizzate, gli sviluppatori possono sfruttare [!DNL React Spectrum] (toolkit dell&#39;interfaccia utente di Adobe), creare microservizi, eventi personalizzati e orchestrare API. Consulta la [documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/overview).
+[!DNL Project Adobe Developer App Builder] è un framework per generare e distribuire applicazioni web personalizzate in Adobe [!DNL `I/O Runtime`]. Per creare applicazioni personalizzate, gli sviluppatori possono sfruttare [!DNL React Spectrum] (toolkit dell&#39;interfaccia utente di Adobe), creare microservizi, eventi personalizzati e orchestrare API. Consulta la [documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/intro_and_overview/#).
 
 Le basi su cui si basa l’architettura includono:
 
@@ -31,7 +31,7 @@ Le basi su cui si basa l’architettura includono:
 
 L’architettura è costituita dalle seguenti parti:
 
-* **Un livello di orchestrazione e API** riceve richieste (in formato JSON) che indicano al servizio di trasformare una risorsa di origine in più rappresentazioni. Le richieste sono asincrone e restituiscono con un ID di attivazione che è l’ID del processo. Le istruzioni sono puramente dichiarative e per tutto il lavoro di elaborazione standard (ad esempio, generazione di miniature, estrazione di testo) i consumatori specificano solo il risultato desiderato, ma non le applicazioni che gestiscono determinate rappresentazioni. Le funzionalità API generiche, come l&#39;autenticazione, l&#39;analisi e la limitazione della velocità, vengono gestite mediante il gateway API Adobe davanti al servizio e tutte le richieste indirizzate a [!DNL Adobe I/O] Runtime. Il routing dell’applicazione viene eseguito dinamicamente dal livello di orchestrazione. I client definiscono applicazioni personalizzate per particolari rappresentazioni, fornite con il proprio set di parametri univoci. L&#39;esecuzione dell&#39;applicazione può essere completamente parallelizzata in quanto si tratta di funzioni senza server separate nell&#39;Adobe [!DNL `I/O Runtime`].
+* **Un livello di orchestrazione e API** riceve richieste (in formato JSON) che indicano al servizio di trasformare una risorsa di origine in più rappresentazioni. Le richieste sono asincrone e restituiscono con un ID di attivazione che è l’ID del processo. Le istruzioni sono puramente dichiarative e per tutto il lavoro di elaborazione standard (ad esempio, generazione di miniature, estrazione di testo) i consumatori specificano solo il risultato desiderato, ma non le applicazioni che gestiscono determinate rappresentazioni. Le funzionalità API generiche, quali l&#39;autenticazione, l&#39;analisi e la limitazione della frequenza, vengono gestite mediante il gateway API di Adobe davanti al servizio e tutte le richieste vengono gestite in [!DNL Adobe I/O] Runtime. Il routing dell’applicazione viene eseguito dinamicamente dal livello di orchestrazione. I client definiscono applicazioni personalizzate per particolari rappresentazioni, fornite con il proprio set di parametri univoci. L&#39;esecuzione dell&#39;applicazione può essere completamente parallelizzata in quanto si tratta di funzioni senza server separate in Adobe [!DNL `I/O Runtime`].
 
 * **Applicazioni per l&#39;elaborazione di risorse** specializzate in determinati tipi di formati di file o rappresentazioni di destinazione. Concettualmente, un&#39;applicazione è simile al concetto di pipe UNIX®: un file di input viene trasformato in uno o più file di output.
 
