@@ -2,10 +2,10 @@
 title: Architettura di  [!DNL Asset Compute Service]
 description: Come  [!DNL Asset Compute Service] API, applicazioni e SDK collaborano per fornire un servizio di elaborazione delle risorse nativo per il cloud.
 exl-id: 658ee4b7-5eb1-4109-b263-1b7d705e49d6
-source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '478'
-ht-degree: 0%
+source-wordcount: '494'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,8 @@ L’architettura è costituita dalle seguenti parti:
 
 * **Una [libreria di applicazioni comune](https://github.com/adobe/asset-compute-sdk)** gestisce le attività comuni. Ad esempio, scaricando il file di origine, caricando le rappresentazioni, segnalando gli errori, inviando gli eventi e monitorando. Questo design garantisce che lo sviluppo delle applicazioni sia semplice, in linea con il concetto di server-less, con interazioni limitate al file system locale.
 
-<!-- TBD:
+<!-- 
+TBD:
 
 * About the YAML file?
 * minimize description to custom applications

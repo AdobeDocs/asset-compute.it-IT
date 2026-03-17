@@ -1,15 +1,15 @@
 ---
-title: API HTTP [!DNL Asset Compute Service]
+title: '[!DNL Asset Compute Service] API HTTP'
 description: API HTTP [!DNL Asset Compute Service] per creare applicazioni personalizzate.
 exl-id: 4b63fdf9-9c0d-4af7-839d-a95e07509750
-source-git-commit: f15b9819d3319d22deccdf7e39c0f72728baaa39
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '2862'
-ht-degree: 2%
+source-wordcount: '2995'
+ht-degree: 3%
 
 ---
 
-# API HTTP [!DNL Asset Compute Service] {#asset-compute-http-api}
+# [!DNL Asset Compute Service] API HTTP {#asset-compute-http-api}
 
 L’utilizzo dell’API è limitato a scopi di sviluppo. L’API viene fornita come contesto durante lo sviluppo di applicazioni personalizzate. [!DNL Adobe Experience Manager] as a [!DNL Cloud Service] utilizza l&#39;API per passare le informazioni di elaborazione a un&#39;applicazione personalizzata. Per ulteriori informazioni, vedere [Utilizzare i microservizi delle risorse e i profili di elaborazione](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
 
@@ -37,7 +37,8 @@ Tutte le API richiedono l’autenticazione tramite token di accesso. Le richiest
 
 1. Intestazione `Authorization` con token Bearer, che è il token dell&#39;account tecnico, ricevuto tramite [JWT Exchange](https://developer.adobe.com/developer-console/docs/guides/) dal progetto Adobe Developer Console. Gli [ambiti](#scopes) sono documentati di seguito.
 
-<!-- TBD: Change the existing URL to a new path when a new path for docs is available. The current path contains master word that is not an inclusive term. Logged ticket in Adobe I/O's GitHub repo to get a new URL.
+<!-- 
+TBD: Change the existing URL to a new path when a new path for docs is available. The current path contains master word that is not an inclusive term. Logged ticket in Adobe I/O's GitHub repo to get a new URL.
 -->
 
 1. Intestazione `x-gw-ims-org-id` con ID organizzazione IMS.
@@ -63,7 +64,7 @@ Questi ambiti richiedono la sottoscrizione del progetto [!DNL Adobe Developer Co
 * Base
    * ambiti: `openid,AdobeID`
 
-* Asset compute
+* Asset Compute
    * metascope: `asset_compute_meta`
    * ambiti: `asset_compute,read_organizations`
 
@@ -208,7 +209,7 @@ I codici di stato sono:
 
 L&#39;operazione `process` invia un processo che trasforma una risorsa di origine in più rappresentazioni, in base alle istruzioni contenute nella richiesta. Le notifiche di completamento (tipo evento `rendition_created`) o di errori (tipo evento `rendition_failed`) vengono inviate a un giornale di registrazione eventi che deve essere recuperato una volta con [`/register`](#register) prima di effettuare un numero qualsiasi di richieste `/process`. Le richieste formate in modo errato hanno immediatamente esito negativo con un codice di errore 400.
 
-I riferimenti binari vengono eseguiti utilizzando URL, ad esempio URL prefirmati di Amazon AWS S3 o URL SAS di archiviazione Azure Blob. Utilizzato sia per leggere la risorsa `source` (`GET` URL) che per scrivere le rappresentazioni (`PUT` URL). Il client è responsabile della generazione di questi URL prefirmati.
+I dati binari sono referenziati utilizzando URL, come Amazon AWS S3 pre-signed URL o Azure Blob Storage SAS URL. Utilizzato sia per leggere la risorsa `source` (`GET` URL) che per scrivere le rappresentazioni (`PUT` URL). Il client è responsabile della generazione di questi URL prefirmati.
 
 | Parametro | Valore |
 |--------------------------|------------------------------------------------------|
@@ -354,7 +355,7 @@ I casi d’uso supportati sono:
 
 * Ritaglio è una rappresentazione di un rettangolo i cui limiti sono definiti da crop.w, crop.h, crop.x e crop.y. I dettagli di ritaglio sono specificati nel campo `instructions.crop` dell&#39;oggetto di rendering.
 * Ridimensionare le immagini utilizzando la larghezza, l&#39;altezza o entrambe. `instructions.width` e `instructions.height` lo definiscono nell&#39;oggetto di rendering. Per ridimensionare utilizzando solo la larghezza o l&#39;altezza, impostate un solo valore. Il servizio di elaborazione conserva le proporzioni.
-* Imposta la qualità per un&#39;immagine JPEG. `instructions.quality` lo definisce nell&#39;oggetto di rendering. Un livello di qualità pari a 100 rappresenta la qualità più elevata, mentre un numero inferiore indica una diminuzione della qualità.
+* Impostare la qualità di un&#39;immagine JPEG. `instructions.quality` lo definisce nell&#39;oggetto di rendering. Un livello di qualità pari a 100 rappresenta la qualità più elevata, mentre un numero inferiore indica una diminuzione della qualità.
 * Creazione di immagini interlacciate. `instructions.interlace` lo definisce nell&#39;oggetto di rendering.
 * Impostate DPI per regolare le dimensioni di rendering per la pubblicazione desktop regolando la scala applicata ai pixel. `instructions.dpi` lo definisce nell&#39;oggetto di rendering per modificare la risoluzione dpi. Tuttavia, per ridimensionare l&#39;immagine in modo che abbia le stesse dimensioni a una risoluzione diversa, utilizzare le istruzioni `convertToDpi`.
 * Ridimensiona l’immagine in modo che la larghezza o l’altezza di cui è stato eseguito il rendering rimanga invariata rispetto all’originale alla risoluzione di destinazione specificata (DPI). `instructions.convertToDpi` lo definisce nell&#39;oggetto di rendering.
@@ -373,15 +374,15 @@ Di seguito sono riportate le opzioni disponibili per l&#39;array `renditions` in
 
 | Nome | Tipo | Descrizione | Esempio |
 |-------------------|----------|-------------|---------|
-| `fmt` | `string` | Il formato di destinazione delle rappresentazioni può anche essere `text` per l&#39;estrazione del testo e `xmp` per l&#39;estrazione dei metadati XMP come XML. Visualizza [formati supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
+| `fmt` | `string` | Il formato di destinazione delle rappresentazioni può anche essere `text` per l&#39;estrazione del testo e `xmp` per l&#39;estrazione dei metadati XMP come XML. Visualizza [formati supportati](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support) | `png` |
 | `worker` | `string` | URL di [applicazione personalizzata](develop-custom-application.md). Deve essere un URL `https://`. Se questo campo è presente, la copia trasformata viene creata da un&#39;applicazione personalizzata. Qualsiasi altro campo di rendering impostato viene quindi utilizzato nell’applicazione personalizzata. | `"https://1234.adobeioruntime.net`<br>`/api/v1/web`<br>`/example-custom-worker-master/worker"` |
 | `target` | `string` | L’URL in cui deve essere caricata la rappresentazione generata utilizzando HTTP PUT. | `http://w.com/img.jpg` |
-| `target` | `object` | Informazioni sul caricamento di URL prefirmati in più parti per la rappresentazione generata. Queste informazioni sono per [AEM / Caricamento binario diretto Oak](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html) con questo [comportamento di caricamento multipart](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html).<br>Campi:<ul><li>`urls`: array di stringhe, uno per ogni URL parte prefirmato</li><li>`minPartSize`: dimensione minima da utilizzare per una parte = url</li><li>`maxPartSize`: dimensione massima da utilizzare per una parte = url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
+| `target` | `object` | Informazioni sul caricamento di URL prefirmati in più parti per la rappresentazione generata. Queste informazioni sono per [Caricamento binario diretto AEM/Oak](https://jackrabbit.apache.org/oak/docs/features/direct-binary-access.html) con questo [comportamento di caricamento in più parti](https://jackrabbit.apache.org/oak/docs/apidocs/org/apache/jackrabbit/api/binary/BinaryUpload.html).<br>Campi:<ul><li>`urls`: array di stringhe, uno per ogni URL parte prefirmato</li><li>`minPartSize`: dimensione minima da utilizzare per una parte = url</li><li>`maxPartSize`: dimensione massima da utilizzare per una parte = url</li></ul> | `{ "urls": [ "https://part1...", "https://part2..." ], "minPartSize": 10000, "maxPartSize": 100000 }` |
 | `userData` | `object` | Facoltativo. Il client controlla lo spazio riservato e lo trasmette così come avviene per gli eventi di rendering. Consente a un client di aggiungere informazioni personalizzate per identificare gli eventi di rendering. Non deve essere modificata o utilizzata nelle applicazioni personalizzate, in quanto i client sono liberi di modificarla in qualsiasi momento. | `{ ... }` |
 
 ### Campi specifici della rappresentazione {#rendition-specific-fields}
 
-Per un elenco dei formati di file attualmente supportati, vedere [formati di file supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/file-format-support).
+Per un elenco dei formati di file attualmente supportati, vedere [formati di file supportati](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support).
 
 | Nome | Tipo | Descrizione | Esempio |
 |-------------------|----------|-------------|---------|
@@ -391,8 +392,8 @@ Per un elenco dei formati di file attualmente supportati, vedere [formati di fil
 | `height` | `number` | Altezza in pixel. solo per le rappresentazioni di immagini. | `200` |
 |                   |          | Le proporzioni vengono sempre mantenute se: <ul> <li> Sono specificati sia `width` che `height`, quindi l&#39;immagine si adatta alle dimensioni mantenendo le proporzioni </li><li> Se si specifica solo `width` o `height`, l&#39;immagine risultante utilizza la dimensione corrispondente mantenendo le proporzioni</li><li> Se `width` o `height` non è specificato, viene utilizzata la dimensione in pixel dell&#39;immagine originale. Dipende dal tipo di origine. Per alcuni formati, ad esempio i file PDF, viene utilizzata una dimensione predefinita. Può essere presente un limite di dimensioni massimo.</li></ul> | |
 | `quality` | `number` | Specificare la qualità jpeg nell&#39;intervallo compreso tra `1` e `100`. Applicabile solo alle rappresentazioni di immagini. | `90` |
-| `xmp` | `string` | Utilizzato solo dal writeback dei metadati dell&#39;XMP, l&#39;XMP con codifica base64 viene riscritto nella rappresentazione specificata. | |
-| `interlace` | `bool` | Creare PNG o GIF interlacciato o progressive JPEG impostandolo su `true`. Non ha alcun effetto su altri formati di file. | |
+| `xmp` | `string` | Utilizzato solo dal writeback dei metadati di XMP, è XMP con codifica base64 per la riscrittura nella rappresentazione specificata. | |
+| `interlace` | `bool` | Creare PNG o GIF interlacciato o JPEG progressivo impostandolo su `true`. Non ha alcun effetto su altri formati di file. | |
 | `jpegSize` | `number` | Dimensione approssimativa del file JPEG in byte. Sostituisce qualsiasi impostazione `quality`. Non ha alcun effetto su altri formati. | |
 | `dpi` | `number` oppure `object` | Impostare x e y DPI. Per semplicità, può anche essere impostato su un singolo numero, che viene utilizzato sia per x che per y. Non ha alcun effetto sull’immagine stessa. | `96` oppure `{ xdpi: 96, ydpi: 96 }` |
 | `convertToDpi` | `number` oppure `object` | x e y DPI ricampiona i valori mantenendo le dimensioni fisiche. Per semplicità, può anche essere impostato su un singolo numero, che viene utilizzato sia per x che per y. | `96` oppure `{ xdpi: 96, ydpi: 96 }` |
@@ -406,7 +407,7 @@ Il formato PNG viene utilizzato come filigrana.
 
 | Nome | Tipo | Descrizione | Esempio |
 |-------------------|----------|-------------|---------|
-| `scale` | `number` | Scala della filigrana, tra `0.0` e `1.0`. `1.0` significa che la filigrana ha la scala originale (1:1) e i valori più bassi ne riducono la dimensione. | Un valore di `0.5` indica metà delle dimensioni originali. |
+| `scale` | `number` | Scala della filigrana, tra `0.0` e `1.0`. `1.0` significa che la filigrana ha la scala originale (1:1) e che i valori più bassi riducono la dimensione della filigrana. | Un valore di `0.5` indica metà delle dimensioni originali. |
 | `image` | `url` | URL del file PNG da utilizzare per la filigrana. | |
 
 ## Eventi asincroni {#asynchronous-events}

@@ -2,16 +2,16 @@
 title: Informazioni sull'estensione di  [!DNL Asset Compute Service]
 description: Quando e come estendere la funzionalità  [!DNL Asset Compute Service]  per eseguire l'elaborazione personalizzata delle risorse.
 exl-id: 3b903364-34cc-44d5-9a03-24a0102cf85d
-source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '229'
-ht-degree: 1%
+source-wordcount: '304'
+ht-degree: 13%
 
 ---
 
 # Introduzione all’estensibilità {#introduction-to-extensibilty}
 
-Molti requisiti di rendering, come la conversione in formati e il ridimensionamento di immagini, sono soddisfatti da [Profili di elaborazione in [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview). I requisiti aziendali più complessi possono richiedere una soluzione personalizzata che soddisfi le esigenze di un&#39;organizzazione. È possibile estendere [!DNL Asset Compute Service] creando applicazioni personalizzate richiamate dai profili di elaborazione in [!DNL Experience Manager]. Queste applicazioni personalizzate soddisfano i [casi d&#39;uso supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
+Molti requisiti di rendering, come la conversione in formati e il ridimensionamento di immagini, sono soddisfatti da [Profili di elaborazione in [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview). I requisiti aziendali più complessi possono richiedere una soluzione personalizzata che soddisfi le esigenze di un&#39;organizzazione. [!DNL Asset Compute Service] può essere estesa creando applicazioni personalizzate richiamate dai profili di elaborazione in [!DNL Experience Manager]. Queste applicazioni personalizzate soddisfano i [casi d&#39;uso supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
 
 >[!NOTE]
 >
@@ -30,7 +30,8 @@ Assicurati di soddisfare i seguenti prerequisiti:
 * Assicurati che lo sviluppatore disponga del ruolo di sviluppatore o delle autorizzazioni di amministratore nell’organizzazione.
 * Verificare che Adobe [[!DNL aio-cli]](https://github.com/adobe/aio-cli) sia installato localmente.
 
-<!-- TBD for later:
+<!-- 
+TBD for later:
 
 * What all accesses and licenses are required?
 * What all permissions are required to create, debug, and deploy custom applications?
