@@ -1,25 +1,25 @@
 ---
-title: Comprendere il funzionamento di un’applicazione personalizzata
-description: Funzionamento interno dell'applicazione personalizzata  [!DNL Asset Compute Service]  per comprendere il funzionamento.
+title: Comprendere il funzionamento di un'applicazione personalizzata
+description: Funzionamento interno dell'applicazione personalizzata  [!DNL Asset Compute Service]  per comprendere il funzionamento dell'applicazione.
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: f199cecfe4409e2370b30783f984062196dd807d
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '786'
 ht-degree: 0%
 
 ---
 
-# Interni di un’applicazione personalizzata {#how-custom-application-works}
+# Interni di un&#39;applicazione personalizzata {#how-custom-application-works}
 
-Utilizza l’illustrazione seguente per comprendere il flusso di lavoro end-to-end quando una risorsa digitale viene elaborata da un client utilizzando un’applicazione personalizzata.
+Utilizzare l&#39;illustrazione seguente per comprendere il flusso di lavoro end-to-end quando una risorsa digitale viene elaborata utilizzando un&#39;applicazione personalizzata da un client.
 
 ![Flusso di lavoro applicazione personalizzato](assets/customworker.svg)
 
-*Figura: passaggi necessari durante l&#39;elaborazione di una risorsa tramite Adobe [!DNL Asset Compute Service].*
+*Figura: passaggi coinvolti durante l&#39;elaborazione di una risorsa utilizzando l&#39;Adobe [!DNL Asset Compute Service].*
 
 ## Registrazione {#registration}
 
-Il client deve chiamare [`/register`](api.md#register) una volta prima della prima richiesta a [`/process`](api.md#process-request) in modo da configurare e recuperare l&#39;URL del journal per la ricezione di eventi Adobe [!DNL I/O Events] per Adobe Asset Compute.
+Il client deve chiamare [`/register`](api.md#register) una volta prima della prima richiesta a [`/process`](api.md#process-request) in modo da poter configurare e recuperare l&#39;URL del journal per la ricezione dell&#39;Adobe [!DNL I/O Events] eventi per l&#39;Asset compute.
 
 ```sh
 curl -X POST \
@@ -30,7 +30,7 @@ curl -X POST \
   -H "x-api-key: $API_KEY"
 ```
 
-La libreria JavaScript [`@adobe/asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) può essere utilizzata nelle applicazioni NodeJS per gestire tutti i passaggi necessari dalla registrazione all&#39;elaborazione alla gestione asincrona degli eventi. Per ulteriori informazioni sulle intestazioni richieste, vedere [Autenticazione e autorizzazione](api.md).
+La libreria JavaScript [`@adobe/asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) può essere utilizzata nelle applicazioni NodeJS per gestire tutti i passaggi necessari dalla registrazione all&#39;elaborazione fino alla gestione asincrona degli eventi. Per ulteriori informazioni sulle intestazioni richieste, vedere [Autenticazione e autorizzazione](api.md).
 
 ## Elaborazione {#processing}
 
@@ -46,7 +46,7 @@ curl -X POST \
   -d "<RENDITION_JSON>
 ```
 
-Il client è responsabile della corretta formattazione delle rappresentazioni con URL prefirmati. La libreria JavaScript [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) può essere utilizzata nelle applicazioni NodeJS per pre-firmare gli URL. Attualmente la libreria supporta solo l’archiviazione BLOB di Azure e i contenitori AWS S3.
+Il client è responsabile della corretta formattazione delle copie trasformate con URL prefirmati. La libreria JavaScript [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) può essere utilizzata nelle applicazioni NodeJS per pre-firmare gli URL. Attualmente la libreria supporta solo l&#39;archiviazione BLOB di Azure e i contenitori AWS S3.
 
 La richiesta di elaborazione restituisce un `requestId` che può essere utilizzato per il polling di [!DNL Adobe I/O] eventi.
 
@@ -72,7 +72,9 @@ Di seguito è riportato un esempio di richiesta di elaborazione personalizzata d
 
 L&#39;[Asset Compute SDK](https://github.com/adobe/asset-compute-sdk#adobe-asset-compute-worker-sdk) utilizzato da un&#39;applicazione personalizzata gestisce la richiesta HTTP POST. Gestisce inoltre il download dell&#39;origine, il caricamento delle rappresentazioni, l&#39;invio di Adobe [!DNL I/O Events] e la gestione degli errori.
 
-<!-- TBD: Add the application diagram. -->
+<!-- 
+TBD: Add the application diagram. 
+-->
 
 ### Codice applicazione {#application-code}
 
@@ -142,7 +144,8 @@ await Promise.all(events.map(event => {
 
 Per informazioni dettagliate su come ottenere gli eventi del diario, vedi Adobe [[!DNL I/O Events] API](https://developer.adobe.com/events/docs/guides/api/journaling-api#).
 
-<!-- TBD:
+<!-- 
+TBD:
 * Illustration of the controls/data flow.
 * Basic overview, in text and not code, of how an application works.
 -->

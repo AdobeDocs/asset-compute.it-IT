@@ -2,9 +2,9 @@
 title: Risoluzione dei problemi [!DNL Asset Compute Service]
 description: Risolvere i problemi ed eseguire il debug delle applicazioni personalizzate utilizzando  [!DNL Asset Compute Service].
 exl-id: 017fff91-e5e9-4a30-babf-5faa1ebefc2f
-source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,8 @@ In caso di problemi durante l&#39;accesso a [!DNL Adobe Developer Console] [tram
 
 1. Configura il resto delle [credenziali richieste](develop-custom-application.md) necessarie per lo strumento per sviluppatori.
 
-<!-- TBD for later:
+<!-- 
+TBD for later:
 Add any best practices for developers in this section:
 * Any items to take care of when creating projects.
 * Any naming conventions, reserved keywords, etc.?

@@ -2,10 +2,10 @@
 title: Imposta l'ambiente di sviluppo richiesto per  [!DNL Asset Compute Service]
 description: Configurazione dell'ambiente di sviluppo per  [!DNL Asset Compute Service]  per iniziare a creare e testare il codice personalizzato.
 exl-id: 91c12889-01d8-4757-9bdd-f73c491cd9d5
-source-git-commit: 63f83ff33ac6cd090fac4f6db18000155f464643
+source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
 workflow-type: tm+mt
-source-wordcount: '360'
-ht-degree: 2%
+source-wordcount: '416'
+ht-degree: 4%
 
 ---
 
@@ -52,7 +52,8 @@ Per creare una configurazione che consenta lo sviluppo per [!DNL Asset Compute S
 
 Una volta configurato l&#39;ambiente, puoi [creare un&#39;applicazione personalizzata](develop-custom-application.md).
 
-<!-- More ideas:
+<!-- 
+More ideas:
  
 * Any steps in the beginning that lead to gotchas later should be called out for caution? For example,
   * don't change some defaults initially
