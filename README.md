@@ -7,4 +7,4 @@ ht-degree: 0%
 ---
 # ARCHIVIATO
 
-Questo archivio è stato migrato a <https://github.com/Adobe-Enterprise-Docs/asset-compute.en>
+Questo archivio è stato migrato a <https://github.com/Adobe-Enterprise-Docs/asset-compute.it-IT>
