@@ -2,16 +2,22 @@
 title: Informazioni sull'estensione di  [!DNL Asset Compute Service]
 description: Quando e come estendere la funzionalità  [!DNL Asset Compute Service]  per eseguire l'elaborazione personalizzata delle risorse.
 exl-id: 3b903364-34cc-44d5-9a03-24a0102cf85d
-source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
+TQID: https://experienceleague.adobe.com/T-Q9ssFC8lirvK3Wl7goCbvso0k--ubsO64cF5MmNn0
+product_v2:
+  - id: d09181b5-a36a-43de-ba01-36641440bc43
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
-source-wordcount: '304'
+source-wordcount: 304
 ht-degree: 13%
 
 ---
 
 # Introduzione all’estensibilità {#introduction-to-extensibilty}
 
-Molti requisiti di rendering, come la conversione in formati e il ridimensionamento di immagini, sono soddisfatti da [Profili di elaborazione in [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview). I requisiti aziendali più complessi possono richiedere una soluzione personalizzata che soddisfi le esigenze di un&#39;organizzazione. [!DNL Asset Compute Service] può essere estesa creando applicazioni personalizzate richiamate dai profili di elaborazione in [!DNL Experience Manager]. Queste applicazioni personalizzate soddisfano i [casi d&#39;uso supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
+Molti requisiti di rendering, come la conversione in formati e il ridimensionamento di immagini, sono soddisfatti da [Profili di elaborazione in [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview). I requisiti aziendali più complessi possono richiedere una soluzione personalizzata che soddisfi le esigenze di un&#39;organizzazione. È possibile estendere [!DNL Asset Compute Service] creando applicazioni personalizzate richiamate dai profili di elaborazione in [!DNL Experience Manager]. Queste applicazioni personalizzate soddisfano i [casi d&#39;uso supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
 
 >[!NOTE]
 >

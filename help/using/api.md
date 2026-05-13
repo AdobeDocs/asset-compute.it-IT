@@ -2,9 +2,22 @@
 title: '[!DNL Asset Compute Service] API HTTP'
 description: API HTTP [!DNL Asset Compute Service] per creare applicazioni personalizzate.
 exl-id: 4b63fdf9-9c0d-4af7-839d-a95e07509750
-source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
+TQID: https://experienceleague.adobe.com/fewAzOtKA-XTmpv-6Q0mlqXpalMWva6GpHlJSW6wPog
+product_v2:
+  - id: d09181b5-a36a-43de-ba01-36641440bc43
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+feature_v2:
+  - id: a01bfd36-4ab8-4bf8-9dc0-5b45b890552e
+  - id: ae478996-b206-4712-9b0c-dc78a2644453
+  - id: da0dfbce-df02-4f8b-b32d-a4e3b1d05085
+  - id: e17747bc-9b7b-44e6-a443-f54229a02620
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
-source-wordcount: '2995'
+source-wordcount: 2995
 ht-degree: 3%
 
 ---
@@ -407,7 +420,7 @@ Il formato PNG viene utilizzato come filigrana.
 
 | Nome | Tipo | Descrizione | Esempio |
 |-------------------|----------|-------------|---------|
-| `scale` | `number` | Scala della filigrana, tra `0.0` e `1.0`. `1.0` significa che la filigrana ha la scala originale (1:1) e che i valori più bassi riducono la dimensione della filigrana. | Un valore di `0.5` indica metà delle dimensioni originali. |
+| `scale` | `number` | Scala della filigrana, tra `0.0` e `1.0`. `1.0` significa che la filigrana ha la scala originale (1:1) e i valori più bassi ne riducono la dimensione. | Un valore di `0.5` indica metà delle dimensioni originali. |
 | `image` | `url` | URL del file PNG da utilizzare per la filigrana. | |
 
 ## Eventi asincroni {#asynchronous-events}
