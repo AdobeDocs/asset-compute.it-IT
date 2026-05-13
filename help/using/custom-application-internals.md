@@ -1,25 +1,29 @@
 ---
-title: Comprendere il funzionamento di un'applicazione personalizzata
-description: Funzionamento interno dell'applicazione personalizzata  [!DNL Asset Compute Service]  per comprendere il funzionamento dell'applicazione.
+title: Comprendere il funzionamento di un’applicazione personalizzata
+description: Funzionamento interno dell'applicazione personalizzata  [!DNL Asset Compute Service]  per comprendere il funzionamento.
 exl-id: a3ee6549-9411-4839-9eff-62947d8f0e42
-source-git-commit: aed361a577fc53caec4118e417b1c0c814617b51
+TQID: https://experienceleague.adobe.com/cwZSB-PP9CxqnUUQslrSRSp-ljjliomsR9TflBUOCuk
+product_v2: id: d09181b5-a36a-43de-ba01-36641440bc43id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2: id: d095671a-1355-40aa-8b5f-06c33c68080b
+source-git-commit: 2510f77fed8d0f0708e09f32d0b13a437d2ede4f
 workflow-type: tm+mt
-source-wordcount: '786'
+source-wordcount: 786
 ht-degree: 0%
 
 ---
 
-# Interni di un&#39;applicazione personalizzata {#how-custom-application-works}
+# Interni di un’applicazione personalizzata {#how-custom-application-works}
 
-Utilizzare l&#39;illustrazione seguente per comprendere il flusso di lavoro end-to-end quando una risorsa digitale viene elaborata utilizzando un&#39;applicazione personalizzata da un client.
+Utilizza l’illustrazione seguente per comprendere il flusso di lavoro end-to-end quando una risorsa digitale viene elaborata da un client utilizzando un’applicazione personalizzata.
 
 ![Flusso di lavoro applicazione personalizzato](assets/customworker.svg)
 
-*Figura: passaggi coinvolti durante l&#39;elaborazione di una risorsa utilizzando l&#39;Adobe [!DNL Asset Compute Service].*
+*Figura: passaggi necessari durante l&#39;elaborazione di una risorsa tramite Adobe [!DNL Asset Compute Service].*
 
 ## Registrazione {#registration}
 
-Il client deve chiamare [`/register`](api.md#register) una volta prima della prima richiesta a [`/process`](api.md#process-request) in modo da poter configurare e recuperare l&#39;URL del journal per la ricezione dell&#39;Adobe [!DNL I/O Events] eventi per l&#39;Asset compute.
+Il client deve chiamare [`/register`](api.md#register) una volta prima della prima richiesta a [`/process`](api.md#process-request) in modo da configurare e recuperare l&#39;URL del journal per la ricezione di eventi Adobe [!DNL I/O Events] per Adobe Asset Compute.
 
 ```sh
 curl -X POST \
@@ -30,7 +34,7 @@ curl -X POST \
   -H "x-api-key: $API_KEY"
 ```
 
-La libreria JavaScript [`@adobe/asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) può essere utilizzata nelle applicazioni NodeJS per gestire tutti i passaggi necessari dalla registrazione all&#39;elaborazione fino alla gestione asincrona degli eventi. Per ulteriori informazioni sulle intestazioni richieste, vedere [Autenticazione e autorizzazione](api.md).
+La libreria JavaScript [`@adobe/asset-compute-client`](https://github.com/adobe/asset-compute-client#usage) può essere utilizzata nelle applicazioni NodeJS per gestire tutti i passaggi necessari dalla registrazione all&#39;elaborazione alla gestione asincrona degli eventi. Per ulteriori informazioni sulle intestazioni richieste, vedere [Autenticazione e autorizzazione](api.md).
 
 ## Elaborazione {#processing}
 
@@ -46,7 +50,7 @@ curl -X POST \
   -d "<RENDITION_JSON>
 ```
 
-Il client è responsabile della corretta formattazione delle copie trasformate con URL prefirmati. La libreria JavaScript [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) può essere utilizzata nelle applicazioni NodeJS per pre-firmare gli URL. Attualmente la libreria supporta solo l&#39;archiviazione BLOB di Azure e i contenitori AWS S3.
+Il client è responsabile della corretta formattazione delle rappresentazioni con URL prefirmati. La libreria JavaScript [`@adobe/node-cloud-blobstore-wrapper`](https://github.com/adobe/node-cloud-blobstore-wrapper#presigned-urls) può essere utilizzata nelle applicazioni NodeJS per pre-firmare gli URL. Attualmente la libreria supporta solo l’archiviazione BLOB di Azure e i contenitori AWS S3.
 
 La richiesta di elaborazione restituisce un `requestId` che può essere utilizzato per il polling di [!DNL Adobe I/O] eventi.
 
