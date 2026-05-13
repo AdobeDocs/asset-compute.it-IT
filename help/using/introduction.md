@@ -36,7 +36,7 @@ Gli sviluppatori possono collegare applicazioni per risorse personalizzate (o pr
 
 [!DNL Asset Compute Service] supporta alcuni casi d&#39;uso aziendali comuni, ad esempio l&#39;elaborazione di immagini di base, le conversioni specifiche dell&#39;applicazione Adobe e la creazione di applicazioni personalizzate che gestiscono requisiti aziendali complessi.
 
-È possibile utilizzare il servizio Web [!DNL Asset Compute] per generare miniature per diversi tipi di file e rendering di immagini di alta qualità per i [formati di file supportati](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support). Vedi [casi d&#39;uso supportati tramite la configurazione personalizzata](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
+È possibile utilizzare il servizio Web [!DNL Asset Compute] per generare miniature per diversi tipi di file e rendering di immagini di alta qualità per i [formati di file supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/file-format-support). Vedi [casi d&#39;uso supportati tramite la configurazione personalizzata](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/manage/asset-microservices-configure-and-use).
 
 >[!NOTE]
 >
@@ -58,7 +58,7 @@ TBD: Should this be mentioned in the docs?
 >
 >* [Panoramica dell&#39;elaborazione delle risorse con i microservizi per le risorse in [!DNL Adobe Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview).
 >* [Documentazione di Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/intro_and_overview/#).
->* [Formati di file supportati per l&#39;elaborazione](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support).
+>* [Formati di file supportati per l&#39;elaborazione](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/file-format-support).
 
 <!-- 
 **TBD:**
