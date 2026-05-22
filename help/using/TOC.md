@@ -2,16 +2,15 @@
 cloud: Experience Cloud
 product: adobe experience manager
 solution: Experience Manager, Experience Manager Assets
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-  - id: d09181b5-a36a-43de-ba01-36641440bc43
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8id: d09181b5-a36a-43de-ba01-36641440bc43
+usetq: true
 type: Documentation
 role: Developer
 feature: Asset Compute Microservices
 user-guide-title: Guida al servizio Asset Compute
 user-guide-description: Questa documentazione tratta  [!DNL Asset Compute Service]  attività come sviluppare, gestire, distribuire e risolvere problemi relativi al codice personalizzato.
 breadcrumb-title: Guida al servizio Asset Compute
-source-git-commit: 7997d284c6051dd2b9f7635f955bdc49d52e843a
+source-git-commit: d39824c90b25004d67cec7122f039e9d238ea0fe
 workflow-type: tm+mt
 source-wordcount: 109
 ht-degree: 16%
@@ -23,7 +22,7 @@ ht-degree: 16%
 
 + [Guida utente del servizio Asset Compute](home.md)
 + [Panoramica](introduction.md)
-+ [Formati di file supportati](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/file-format-support)
++ [Formati di file supportati](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/file-format-support)
 + [Architettura](architecture.md)
 + [Riferimenti API](api.md)
 + Estendi il servizio Asset Compute {#extend}
