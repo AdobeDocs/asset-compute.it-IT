@@ -39,4 +39,4 @@ Nel file TOC.md
 | metadati | che cosa fa |
 |--- |--- |
 | user-guide-title | Utilizzato nell’intestazione dell’articolo come collegamento |
-| user-guide-url | Apre la pagina hub helpx |
+| user-guide-url | Apre la pagina dell’hub helpx |
