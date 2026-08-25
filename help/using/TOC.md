@@ -1,20 +1,13 @@
 ---
 cloud: Experience Cloud
 product: adobe experience manager
-solution: Experience Manager, Experience Manager Assets
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-  - id: d09181b5-a36a-43de-ba01-36641440bc43
-usetq: true
-type: Documentation
-role: Developer
 feature: Asset Compute Microservices
 user-guide-title: Guida al servizio Asset Compute
 user-guide-description: Questa documentazione tratta  [!DNL Asset Compute Service]  attività come sviluppare, gestire, distribuire e risolvere problemi relativi al codice personalizzato.
 breadcrumb-title: Guida al servizio Asset Compute
-source-git-commit: d39824c90b25004d67cec7122f039e9d238ea0fe
+source-git-commit: adfa6b066d5b77362e8dd8a10e164eaea6129abc
 workflow-type: tm+mt
-source-wordcount: 109
+source-wordcount: '109'
 ht-degree: 16%
 
 ---
@@ -28,12 +21,12 @@ ht-degree: 16%
 + [Architettura](architecture.md)
 + [Riferimenti API](api.md)
 + Estendi il servizio Asset Compute {#extend}
-   + [Informazioni sull&#39;estensione di Compute Service](understand-extensibility.md)
-   + [Configurare l’ambiente](setup-environment.md)
-   + [Comprendere i concetti interni di un’app](custom-application-internals.md)
-   + [Sviluppare un’applicazione personalizzata](develop-custom-application.md)
-   + [Testare un’applicazione personalizzata](test-custom-application.md)
-   + [Distribuire un&#39;applicazione personalizzata](deploy-custom-application.md)
-   + [Integrare e utilizzare in [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)
+  + [Informazioni sull&#39;estensione di Compute Service](understand-extensibility.md)
+  + [Configurare l’ambiente](setup-environment.md)
+  + [Comprendere i concetti interni di un’app](custom-application-internals.md)
+  + [Sviluppare un’applicazione personalizzata](develop-custom-application.md)
+  + [Testare un’applicazione personalizzata](test-custom-application.md)
+  + [Distribuire un&#39;applicazione personalizzata](deploy-custom-application.md)
+  + [Integrare e utilizzare in [!DNL Experience Manager] as a [!DNL Cloud Service]](https://experienceleague.adobe.com/it/docs/experience-manager-cloud-service/content/assets/asset-microservices-overview)
 + [Risoluzione dei problemi](troubleshooting.md)
 + [Contribuire al progetto open-source](contribute-to-compute-service.md)
