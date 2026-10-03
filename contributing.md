@@ -58,5 +58,5 @@ Adobe è felice per qualsiasi contributo e rivede il tuo contributo se viene eff
 
 ## Ulteriori informazioni
 
-Per ulteriori informazioni su come utilizzare la piattaforma di authoring GitHub, consulta la [Guida per i collaboratori alla documentazione di Adobe](https://experienceleague.adobe.com/en/docs/contributor/contributor-guide/introduction).
+Per ulteriori informazioni su come utilizzare la piattaforma di authoring GitHub, consulta la [Guida per i collaboratori alla documentazione di Adobe](https://experienceleague.adobe.com/it/docs/contributor/contributor-guide/introduction).
 
